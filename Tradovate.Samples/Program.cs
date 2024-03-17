@@ -22,19 +22,21 @@ namespace Tradovate
 
         static void Main(string[] args)
         {
-            if (args.Length != 2)
+            if (args.Length != 4)
             {
-                Console.WriteLine("Please specify username and password as arguments");
+                Console.WriteLine("Please specify username, password, cid and secret as arguments");
                 return;
             }
 
             MyUsername = args[0];
             MyPassword = args[1];
             var password = args[1];
-            LiveUrl = "https://live-api-d.tradovate.com/v1";
-            DemoUrl = "https://demo-api-d.tradovate.com/v1";
+            var cid = args[2];
+            var secret = args[3];
+            LiveUrl = "https://live.tradovateapi.com/v1";
+            DemoUrl = "https://demo.tradovateapi.com/v1";
 
-            var accessTokenResponse = Authentication.GetAccessToken(LiveUrl, MyUsername, password);
+            var accessTokenResponse = Authentication.GetAccessToken(LiveUrl, MyUsername, password, cid, secret);
             AccessToken = accessTokenResponse.AccessToken;
             MyUserId = accessTokenResponse.UserId ?? 0;
 

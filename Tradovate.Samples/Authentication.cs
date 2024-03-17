@@ -14,10 +14,10 @@ namespace Tradovate
 {
     class Authentication
     {
-        public static AccessTokenResponse GetAccessToken(string basePath, string username, string password)
+        public static AccessTokenResponse GetAccessToken(string basePath, string username, string password, string cid, string secret)
         {
             var apiInstance = new AuthenticationApi(basePath);
-            var body = new AccessTokenRequest(name: username, password: password, appId: "SampleApp", appVersion: "0.1.0", cid: "8", sec: "f03741b6-f634-48d6-9308-c8fb871150c2");
+            var body = new AccessTokenRequest(name: username, password: password, appId: "SampleApp", appVersion: "0.0.1", cid: cid, sec: secret);
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             AccessTokenResponse result = apiInstance.AccessTokenRequest(body);
             Debug.WriteLine(result);
