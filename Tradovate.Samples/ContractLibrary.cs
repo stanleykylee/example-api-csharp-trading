@@ -61,7 +61,7 @@ namespace Tradovate
             ProductSession productSession = contractLibraryApi.ProductSessionItem(product.Id);
             Log.Write(productSession);
             ProductFeeParamsResponse productFees = contractLibraryApi.GetProductFeeParams(new GetProductFeeParams(new List<long?> { product.Id }));
-            foreach (var fee in productFees.Params)
+            foreach (var fee in productFees._Params)
             {
                 Log.Write(fee);
             }
