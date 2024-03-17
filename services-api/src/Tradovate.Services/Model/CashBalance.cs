@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -40,7 +39,8 @@ namespace Tradovate.Services.Model
         /// <param name="amount">amount (required).</param>
         /// <param name="realizedPnL">realizedPnL.</param>
         /// <param name="weekRealizedPnL">weekRealizedPnL.</param>
-        public CashBalance(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), TradeDate tradeDate = default(TradeDate), long? currencyId = default(long?), double? amount = default(double?), double? realizedPnL = default(double?), double? weekRealizedPnL = default(double?))
+        /// <param name="amountSOD">amountSOD.</param>
+        public CashBalance(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), TradeDate tradeDate = default(TradeDate), long? currencyId = default(long?), double? amount = default(double?), double? realizedPnL = default(double?), double? weekRealizedPnL = default(double?), double? amountSOD = default(double?))
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -90,6 +90,7 @@ namespace Tradovate.Services.Model
             this.Id = id;
             this.RealizedPnL = realizedPnL;
             this.WeekRealizedPnL = weekRealizedPnL;
+            this.AmountSOD = amountSOD;
         }
         
         /// <summary>
@@ -141,6 +142,12 @@ namespace Tradovate.Services.Model
         public double? WeekRealizedPnL { get; set; }
 
         /// <summary>
+        /// Gets or Sets AmountSOD
+        /// </summary>
+        [DataMember(Name="amountSOD", EmitDefaultValue=false)]
+        public double? AmountSOD { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +163,7 @@ namespace Tradovate.Services.Model
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  RealizedPnL: ").Append(RealizedPnL).Append("\n");
             sb.Append("  WeekRealizedPnL: ").Append(WeekRealizedPnL).Append("\n");
+            sb.Append("  AmountSOD: ").Append(AmountSOD).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +237,11 @@ namespace Tradovate.Services.Model
                     this.WeekRealizedPnL == input.WeekRealizedPnL ||
                     (this.WeekRealizedPnL != null &&
                     this.WeekRealizedPnL.Equals(input.WeekRealizedPnL))
+                ) && 
+                (
+                    this.AmountSOD == input.AmountSOD ||
+                    (this.AmountSOD != null &&
+                    this.AmountSOD.Equals(input.AmountSOD))
                 );
         }
 
@@ -257,6 +270,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.RealizedPnL.GetHashCode();
                 if (this.WeekRealizedPnL != null)
                     hashCode = hashCode * 59 + this.WeekRealizedPnL.GetHashCode();
+                if (this.AmountSOD != null)
+                    hashCode = hashCode * 59 + this.AmountSOD.GetHashCode();
                 return hashCode;
             }
         }

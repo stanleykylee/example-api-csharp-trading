@@ -18,8 +18,10 @@ Name | Type | Description | Notes
 **FlattenTimestamp** | **DateTime?** | Flatten &amp;amp; Cancel | [optional] 
 **TrailingMaxDrawdown** | **double?** | $ Trailing Max Drawdown | [optional] 
 **TrailingMaxDrawdownLimit** | **double?** | $ Trailing Max Drawdown Limit | [optional] 
+**TrailingMaxDrawdownMode** | **string** | EOD, RealTime | [optional] 
 **DailyProfitAutoLiq** | **double?** | $ Daily Profit for an Auto-Liq | [optional] 
 **WeeklyProfitAutoLiq** | **double?** | $ Weekly Profit for an Auto-Liq | [optional] 
+**DoNotUnlock** | **bool?** | Do not automatically unlock account if triggered | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

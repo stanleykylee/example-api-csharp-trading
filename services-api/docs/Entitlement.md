@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **DiscontinuedDate** | [**TradeDate**](TradeDate.md) |  | [optional] 
 **Name** | **string** |  | 
 **Duration** | **int?** |  | [optional] 
-**DurationUnits** | **string** | Month, Quarter, Week, Year | [optional] 
+**DurationUnits** | **string** | Lifetime, Month, Quarter, Week, Year | [optional] 
 **Autorenewal** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

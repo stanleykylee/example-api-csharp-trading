@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -91,9 +90,9 @@ namespace Tradovate.Services.Model
         [DataMember(Name="marginAccountType", EmitDefaultValue=false)]
         public MarginAccountTypeEnum MarginAccountType { get; set; }
         /// <summary>
-        /// Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust
+        /// Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust
         /// </summary>
-        /// <value>Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust</value>
+        /// <value>Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust</value>
         [JsonConverter(typeof(StringEnumConverter))]
                 public enum LegalStatusEnum
         {
@@ -138,14 +137,19 @@ namespace Tradovate.Services.Model
             [EnumMember(Value = "LP")]
             LP = 8,
             /// <summary>
+            /// Enum PTR for value: PTR
+            /// </summary>
+            [EnumMember(Value = "PTR")]
+            PTR = 9,
+            /// <summary>
             /// Enum Trust for value: Trust
             /// </summary>
             [EnumMember(Value = "Trust")]
-            Trust = 9        }
+            Trust = 10        }
         /// <summary>
-        /// Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust
+        /// Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust
         /// </summary>
-        /// <value>Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust</value>
+        /// <value>Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust</value>
         [DataMember(Name="legalStatus", EmitDefaultValue=false)]
         public LegalStatusEnum LegalStatus { get; set; }
         /// <summary>
@@ -160,9 +164,10 @@ namespace Tradovate.Services.Model
         /// <param name="riskCategoryId">riskCategoryId (required).</param>
         /// <param name="autoLiqProfileId">autoLiqProfileId (required).</param>
         /// <param name="marginAccountType">Hedger, Speculator (required).</param>
-        /// <param name="legalStatus">Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust (required).</param>
+        /// <param name="legalStatus">Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust (required).</param>
+        /// <param name="timestamp">timestamp (required).</param>
         /// <param name="@readonly">@readonly.</param>
-        public Account(long? id = default(long?), string name = default(string), long? userId = default(long?), AccountTypeEnum accountType = default(AccountTypeEnum), bool? active = default(bool?), long? clearingHouseId = default(long?), long? riskCategoryId = default(long?), long? autoLiqProfileId = default(long?), MarginAccountTypeEnum marginAccountType = default(MarginAccountTypeEnum), LegalStatusEnum legalStatus = default(LegalStatusEnum), bool? @readonly = default(bool?))
+        public Account(long? id = default(long?), string name = default(string), long? userId = default(long?), AccountTypeEnum accountType = default(AccountTypeEnum), bool? active = default(bool?), long? clearingHouseId = default(long?), long? riskCategoryId = default(long?), long? autoLiqProfileId = default(long?), MarginAccountTypeEnum marginAccountType = default(MarginAccountTypeEnum), LegalStatusEnum legalStatus = default(LegalStatusEnum), DateTime? timestamp = default(DateTime?), bool? @readonly = default(bool?))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -245,8 +250,17 @@ namespace Tradovate.Services.Model
             {
                 this.LegalStatus = legalStatus;
             }
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
+            {
+                throw new InvalidDataException("timestamp is a required property for Account and cannot be null");
+            }
+            else
+            {
+                this.Timestamp = timestamp;
+            }
             this.Id = id;
-            this.Readonly = @readonly;
+            this._Readonly = @readonly;
         }
         
         /// <summary>
@@ -295,10 +309,16 @@ namespace Tradovate.Services.Model
 
 
         /// <summary>
-        /// Gets or Sets Readonly
+        /// Gets or Sets Timestamp
+        /// </summary>
+        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        public DateTime? Timestamp { get; set; }
+
+        /// <summary>
+        /// Gets or Sets _Readonly
         /// </summary>
         [DataMember(Name="readonly", EmitDefaultValue=false)]
-        public bool? Readonly { get; set; }
+        public bool? _Readonly { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -318,7 +338,8 @@ namespace Tradovate.Services.Model
             sb.Append("  AutoLiqProfileId: ").Append(AutoLiqProfileId).Append("\n");
             sb.Append("  MarginAccountType: ").Append(MarginAccountType).Append("\n");
             sb.Append("  LegalStatus: ").Append(LegalStatus).Append("\n");
-            sb.Append("  Readonly: ").Append(Readonly).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  _Readonly: ").Append(_Readonly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -404,9 +425,14 @@ namespace Tradovate.Services.Model
                     this.LegalStatus.Equals(input.LegalStatus))
                 ) && 
                 (
-                    this.Readonly == input.Readonly ||
-                    (this.Readonly != null &&
-                    this.Readonly.Equals(input.Readonly))
+                    this.Timestamp == input.Timestamp ||
+                    (this.Timestamp != null &&
+                    this.Timestamp.Equals(input.Timestamp))
+                ) && 
+                (
+                    this._Readonly == input._Readonly ||
+                    (this._Readonly != null &&
+                    this._Readonly.Equals(input._Readonly))
                 );
         }
 
@@ -439,8 +465,10 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.MarginAccountType.GetHashCode();
                 if (this.LegalStatus != null)
                     hashCode = hashCode * 59 + this.LegalStatus.GetHashCode();
-                if (this.Readonly != null)
-                    hashCode = hashCode * 59 + this.Readonly.GetHashCode();
+                if (this.Timestamp != null)
+                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this._Readonly != null)
+                    hashCode = hashCode * 59 + this._Readonly.GetHashCode();
                 return hashCode;
             }
         }

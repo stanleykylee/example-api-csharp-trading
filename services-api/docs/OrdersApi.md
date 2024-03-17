@@ -67,6 +67,8 @@ Method | HTTP request | Description
 
 
 
+### Make a request to cancel an order.
+
 ### Example
 ```csharp
 using System;
@@ -1727,6 +1729,8 @@ This endpoint does not need any parameter.
 
 
 
+### Stop a running multi-bracket strategy.
+
 ### Example
 ```csharp
 using System;
@@ -1784,6 +1788,8 @@ Name | Type | Description  | Notes
 > PlaceOrderResult LiquidatePosition (LiquidatePosition body)
 
 
+
+### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. > Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
 
 ### Example
 ```csharp
@@ -1843,6 +1849,8 @@ Name | Type | Description  | Notes
 
 
 
+### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. > *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
+
 ### Example
 ```csharp
 using System;
@@ -1900,6 +1908,8 @@ Name | Type | Description  | Notes
 > OrderStrategyStatusResponse ModifyOrderStrategy (ModifyOrderStrategy body)
 
 
+
+### Modify an existing Order Strategy
 
 ### Example
 ```csharp
@@ -3143,6 +3153,8 @@ This endpoint does not need any parameter.
 
 
 
+### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an `other` parameter pertaining to the order linked to this one. The `other` must specify an `action` and an `orderType` which determines the other parameters that must be set. For example a Limit or Stop order must use the `price` parameter, but a Stop-Limit will require a `price` and a `stopPrice`. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  ```js const URL = 'demo.tradovateapi.com/v1' const limit = {     action: 'Sell',     orderType: 'Limit',     price: 4200.00 } const oco = {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \"Buy\",     symbol: \"MESM1\",     orderQty: 1,     orderType: \"Stop\",     price: 4100.00     isAutomated: true, //must be true if this isn't an order made directly by a human     other: limit }  const response = await fetch(URL + '/order/placeoco', {     method: 'POST',     headers: {         'Accept': 'application/json',         'Authorization': `Bearer ${myAccessToken}`,     },     body: JSON.stringify(oco) })  const json = await response.json() // { orderId: 0000000, ocoId: 0000000 } ```
+
 ### Example
 ```csharp
 using System;
@@ -3200,6 +3212,8 @@ Name | Type | Description  | Notes
 > PlaceOsoResult PlaceOSO (PlaceOSO body)
 
 
+
+### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the `bracket1` order will be sent. Below is an example in JavaScript:  ```js const URL = 'demo.tradovateapi.com/v1'  const oso = {     action: 'Sell',     orderType: 'Limit',     price: 4200.00, }  const initial = {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \"Buy\",     symbol: \"MESM1\",     orderQty: 1,     orderType: \"Limit\",     price: 4150.00,     isAutomated: true //must be true if this isn't an order made directly by a human     bracket1: oso }  const response = await fetch(URL + '/order/placeOSO', {     method: 'POST',     headers: {         'Accept': 'application/json',         'Authorization': `Bearer ${myAccessToken}`,     },     body: JSON.stringify(initial) })  const json = await response.json() // { orderId: 0000000 } ```  >*Note:* If you specify both `bracket1` and `bracket2` the two orders will be linked as an OCO, where filling one will cancel the other.
 
 ### Example
 ```csharp
@@ -3259,6 +3273,8 @@ Name | Type | Description  | Notes
 
 
 
+### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* ```js const URL = 'demo.tradovateapi.com/v1' const body = {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \"Buy\",     symbol: \"MYMM1\",     orderQty: 1,     orderType: \"Market\",     isAutomated: true //must be true if this isn't an order made directly by a human }  const response = await fetch(URL + '/order/placeorder', {     method: 'POST',     headers: {         'Accept': 'application/json',         'Authorization': `Bearer ${myAccessToken}`,     },     body: JSON.stringify(body) })  const json = await response.json() // { orderId: 0000000 }  ```  #### *Sell Limit* ```js const URL = 'demo.tradovateapi.com/v1' const body = {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \"Sell\",     symbol: \"MYMM1\",     orderQty: 1,     orderType: \"Limit\",     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn't an order made directly by a human }  const response = await fetch(URL + '/order/placeorder', {     method: 'POST',     headers: {         'Accept': 'application/json',         'Authorization': `Bearer ${myAccessToken}`,     },     body: JSON.stringify(body) })  const json = await response.json() // { orderId: 0000000 }  ``` 
+
 ### Example
 ```csharp
 using System;
@@ -3316,6 +3332,8 @@ Name | Type | Description  | Notes
 > OrderStrategyStatusResponse StartOrderStrategy (StartOrderStrategy body)
 
 
+
+### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to `brackets` field on the `params` object as a JSON string.  ```js  const URL = 'wss://demo.tradovateapi.com/v1/websocket'  const params = {     entryVersion: {         orderQty: 1,         orderType: \"Market\"     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body = {     accountId: myAcctId,     accountSpec: name,     symbol: 'MESM1',     action: 'Sell',     orderStrategyTypeId: 2, //2 is 'multibracket', we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket = new WebSocket(URL)  //authorize socket using your access token mySocket.onopen = function() {     mySocket.send(`authorize\\n0\\n\\n${accessToken}`) }  mySocket.send(`orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}`)  ```  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
 
 ### Example
 ```csharp

@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -29,6 +28,29 @@ namespace Tradovate.Services.Model
     [DataContract]
         public partial class UserAccountAutoLiq :  IEquatable<UserAccountAutoLiq>, IValidatableObject
     {
+        /// <summary>
+        /// EOD, RealTime
+        /// </summary>
+        /// <value>EOD, RealTime</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+                public enum TrailingMaxDrawdownModeEnum
+        {
+            /// <summary>
+            /// Enum EOD for value: EOD
+            /// </summary>
+            [EnumMember(Value = "EOD")]
+            EOD = 1,
+            /// <summary>
+            /// Enum RealTime for value: RealTime
+            /// </summary>
+            [EnumMember(Value = "RealTime")]
+            RealTime = 2        }
+        /// <summary>
+        /// EOD, RealTime
+        /// </summary>
+        /// <value>EOD, RealTime</value>
+        [DataMember(Name="trailingMaxDrawdownMode", EmitDefaultValue=false)]
+        public TrailingMaxDrawdownModeEnum? TrailingMaxDrawdownMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UserAccountAutoLiq" /> class.
         /// </summary>
@@ -47,9 +69,11 @@ namespace Tradovate.Services.Model
         /// <param name="flattenTimestamp">Flatten &amp;amp; Cancel.</param>
         /// <param name="trailingMaxDrawdown">$ Trailing Max Drawdown.</param>
         /// <param name="trailingMaxDrawdownLimit">$ Trailing Max Drawdown Limit.</param>
+        /// <param name="trailingMaxDrawdownMode">EOD, RealTime.</param>
         /// <param name="dailyProfitAutoLiq">$ Daily Profit for an Auto-Liq.</param>
         /// <param name="weeklyProfitAutoLiq">$ Weekly Profit for an Auto-Liq.</param>
-        public UserAccountAutoLiq(long? id = default(long?), bool? changesLocked = default(bool?), double? marginPercentageAlert = default(double?), double? dailyLossPercentageAlert = default(double?), double? dailyLossAlert = default(double?), double? marginPercentageLiqOnly = default(double?), double? dailyLossPercentageLiqOnly = default(double?), double? dailyLossLiqOnly = default(double?), double? marginPercentageAutoLiq = default(double?), double? dailyLossPercentageAutoLiq = default(double?), double? dailyLossAutoLiq = default(double?), double? weeklyLossAutoLiq = default(double?), DateTime? flattenTimestamp = default(DateTime?), double? trailingMaxDrawdown = default(double?), double? trailingMaxDrawdownLimit = default(double?), double? dailyProfitAutoLiq = default(double?), double? weeklyProfitAutoLiq = default(double?))
+        /// <param name="doNotUnlock">Do not automatically unlock account if triggered.</param>
+        public UserAccountAutoLiq(long? id = default(long?), bool? changesLocked = default(bool?), double? marginPercentageAlert = default(double?), double? dailyLossPercentageAlert = default(double?), double? dailyLossAlert = default(double?), double? marginPercentageLiqOnly = default(double?), double? dailyLossPercentageLiqOnly = default(double?), double? dailyLossLiqOnly = default(double?), double? marginPercentageAutoLiq = default(double?), double? dailyLossPercentageAutoLiq = default(double?), double? dailyLossAutoLiq = default(double?), double? weeklyLossAutoLiq = default(double?), DateTime? flattenTimestamp = default(DateTime?), double? trailingMaxDrawdown = default(double?), double? trailingMaxDrawdownLimit = default(double?), TrailingMaxDrawdownModeEnum? trailingMaxDrawdownMode = default(TrailingMaxDrawdownModeEnum?), double? dailyProfitAutoLiq = default(double?), double? weeklyProfitAutoLiq = default(double?), bool? doNotUnlock = default(bool?))
         {
             this.Id = id;
             this.ChangesLocked = changesLocked;
@@ -66,8 +90,10 @@ namespace Tradovate.Services.Model
             this.FlattenTimestamp = flattenTimestamp;
             this.TrailingMaxDrawdown = trailingMaxDrawdown;
             this.TrailingMaxDrawdownLimit = trailingMaxDrawdownLimit;
+            this.TrailingMaxDrawdownMode = trailingMaxDrawdownMode;
             this.DailyProfitAutoLiq = dailyProfitAutoLiq;
             this.WeeklyProfitAutoLiq = weeklyProfitAutoLiq;
+            this.DoNotUnlock = doNotUnlock;
         }
         
         /// <summary>
@@ -174,6 +200,7 @@ namespace Tradovate.Services.Model
         [DataMember(Name="trailingMaxDrawdownLimit", EmitDefaultValue=false)]
         public double? TrailingMaxDrawdownLimit { get; set; }
 
+
         /// <summary>
         /// $ Daily Profit for an Auto-Liq
         /// </summary>
@@ -187,6 +214,13 @@ namespace Tradovate.Services.Model
         /// <value>$ Weekly Profit for an Auto-Liq</value>
         [DataMember(Name="weeklyProfitAutoLiq", EmitDefaultValue=false)]
         public double? WeeklyProfitAutoLiq { get; set; }
+
+        /// <summary>
+        /// Do not automatically unlock account if triggered
+        /// </summary>
+        /// <value>Do not automatically unlock account if triggered</value>
+        [DataMember(Name="doNotUnlock", EmitDefaultValue=false)]
+        public bool? DoNotUnlock { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -211,8 +245,10 @@ namespace Tradovate.Services.Model
             sb.Append("  FlattenTimestamp: ").Append(FlattenTimestamp).Append("\n");
             sb.Append("  TrailingMaxDrawdown: ").Append(TrailingMaxDrawdown).Append("\n");
             sb.Append("  TrailingMaxDrawdownLimit: ").Append(TrailingMaxDrawdownLimit).Append("\n");
+            sb.Append("  TrailingMaxDrawdownMode: ").Append(TrailingMaxDrawdownMode).Append("\n");
             sb.Append("  DailyProfitAutoLiq: ").Append(DailyProfitAutoLiq).Append("\n");
             sb.Append("  WeeklyProfitAutoLiq: ").Append(WeeklyProfitAutoLiq).Append("\n");
+            sb.Append("  DoNotUnlock: ").Append(DoNotUnlock).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -323,6 +359,11 @@ namespace Tradovate.Services.Model
                     this.TrailingMaxDrawdownLimit.Equals(input.TrailingMaxDrawdownLimit))
                 ) && 
                 (
+                    this.TrailingMaxDrawdownMode == input.TrailingMaxDrawdownMode ||
+                    (this.TrailingMaxDrawdownMode != null &&
+                    this.TrailingMaxDrawdownMode.Equals(input.TrailingMaxDrawdownMode))
+                ) && 
+                (
                     this.DailyProfitAutoLiq == input.DailyProfitAutoLiq ||
                     (this.DailyProfitAutoLiq != null &&
                     this.DailyProfitAutoLiq.Equals(input.DailyProfitAutoLiq))
@@ -331,6 +372,11 @@ namespace Tradovate.Services.Model
                     this.WeeklyProfitAutoLiq == input.WeeklyProfitAutoLiq ||
                     (this.WeeklyProfitAutoLiq != null &&
                     this.WeeklyProfitAutoLiq.Equals(input.WeeklyProfitAutoLiq))
+                ) && 
+                (
+                    this.DoNotUnlock == input.DoNotUnlock ||
+                    (this.DoNotUnlock != null &&
+                    this.DoNotUnlock.Equals(input.DoNotUnlock))
                 );
         }
 
@@ -373,10 +419,14 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.TrailingMaxDrawdown.GetHashCode();
                 if (this.TrailingMaxDrawdownLimit != null)
                     hashCode = hashCode * 59 + this.TrailingMaxDrawdownLimit.GetHashCode();
+                if (this.TrailingMaxDrawdownMode != null)
+                    hashCode = hashCode * 59 + this.TrailingMaxDrawdownMode.GetHashCode();
                 if (this.DailyProfitAutoLiq != null)
                     hashCode = hashCode * 59 + this.DailyProfitAutoLiq.GetHashCode();
                 if (this.WeeklyProfitAutoLiq != null)
                     hashCode = hashCode * 59 + this.WeeklyProfitAutoLiq.GetHashCode();
+                if (this.DoNotUnlock != null)
+                    hashCode = hashCode * 59 + this.DoNotUnlock.GetHashCode();
                 return hashCode;
             }
         }

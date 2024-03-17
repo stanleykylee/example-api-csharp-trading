@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -23,6 +23,109 @@ namespace Tradovate.Services.Api
         public interface IRisksApi : IApiAccessor
     {
         #region Synchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        List<AccountRiskStatus> AccountRiskStatusDependents (long? masterid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        ApiResponse<List<AccountRiskStatus>> AccountRiskStatusDependentsWithHttpInfo (long? masterid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an entity of AccountRiskStatus type by its id
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>AccountRiskStatus</returns>
+        AccountRiskStatus AccountRiskStatusItem (long? id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an entity of AccountRiskStatus type by its id
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of AccountRiskStatus</returns>
+        ApiResponse<AccountRiskStatus> AccountRiskStatusItemWithHttpInfo (long? id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        List<AccountRiskStatus> AccountRiskStatusItems (List<long?> ids);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        ApiResponse<List<AccountRiskStatus>> AccountRiskStatusItemsWithHttpInfo (List<long?> ids);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        List<AccountRiskStatus> AccountRiskStatusLDependents (List<long?> masterids);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        ApiResponse<List<AccountRiskStatus>> AccountRiskStatusLDependentsWithHttpInfo (List<long?> masterids);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        List<AccountRiskStatus> AccountRiskStatusList ();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        ApiResponse<List<AccountRiskStatus>> AccountRiskStatusListWithHttpInfo ();
         /// <summary>
         /// 
         /// </summary>
@@ -111,7 +214,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove an account position limit for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -122,7 +225,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove an account position limit for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -132,7 +235,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove a Risk Setting parameter.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -143,7 +246,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove a Risk Setting parameter.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -655,6 +758,109 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusDependentsAsync (long? masterid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusDependentsAsyncWithHttpInfo (long? masterid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an entity of AccountRiskStatus type by its id
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of AccountRiskStatus</returns>
+        System.Threading.Tasks.Task<AccountRiskStatus> AccountRiskStatusItemAsync (long? id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves an entity of AccountRiskStatus type by its id
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ApiResponse (AccountRiskStatus)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AccountRiskStatus>> AccountRiskStatusItemAsyncWithHttpInfo (long? id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusItemsAsync (List<long?> ids);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusItemsAsyncWithHttpInfo (List<long?> ids);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusLDependentsAsync (List<long?> masterids);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusLDependentsAsyncWithHttpInfo (List<long?> masterids);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusListAsync ();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Retrieves all entities of AccountRiskStatus type
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusListAsyncWithHttpInfo ();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Retrieves all entities of ContractMargin type related to Contract entity
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
@@ -739,7 +945,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove an account position limit for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -750,7 +956,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove an account position limit for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -760,7 +966,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove a Risk Setting parameter.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -771,7 +977,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Remove a Risk Setting parameter.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1389,6 +1595,709 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        public List<AccountRiskStatus> AccountRiskStatusDependents (long? masterid)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = AccountRiskStatusDependentsWithHttpInfo(masterid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        public ApiResponse< List<AccountRiskStatus> > AccountRiskStatusDependentsWithHttpInfo (long? masterid)
+        {
+            // verify the required parameter 'masterid' is set
+            if (masterid == null)
+                throw new ApiException(400, "Missing required parameter 'masterid' when calling RisksApi->AccountRiskStatusDependents");
+
+            var localVarPath = "/accountRiskStatus/deps";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (masterid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "masterid", masterid)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusDependents", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusDependentsAsync (long? masterid)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = await AccountRiskStatusDependentsAsyncWithHttpInfo(masterid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to Account entity
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterid">id of Account entity</param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusDependentsAsyncWithHttpInfo (long? masterid)
+        {
+            // verify the required parameter 'masterid' is set
+            if (masterid == null)
+                throw new ApiException(400, "Missing required parameter 'masterid' when calling RisksApi->AccountRiskStatusDependents");
+
+            var localVarPath = "/accountRiskStatus/deps";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (masterid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "masterid", masterid)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusDependents", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves an entity of AccountRiskStatus type by its id
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>AccountRiskStatus</returns>
+        public AccountRiskStatus AccountRiskStatusItem (long? id)
+        {
+             ApiResponse<AccountRiskStatus> localVarResponse = AccountRiskStatusItemWithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves an entity of AccountRiskStatus type by its id
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of AccountRiskStatus</returns>
+        public ApiResponse< AccountRiskStatus > AccountRiskStatusItemWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling RisksApi->AccountRiskStatusItem");
+
+            var localVarPath = "/accountRiskStatus/item";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AccountRiskStatus>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (AccountRiskStatus) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AccountRiskStatus)));
+        }
+
+        /// <summary>
+        ///  Retrieves an entity of AccountRiskStatus type by its id
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of AccountRiskStatus</returns>
+        public async System.Threading.Tasks.Task<AccountRiskStatus> AccountRiskStatusItemAsync (long? id)
+        {
+             ApiResponse<AccountRiskStatus> localVarResponse = await AccountRiskStatusItemAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves an entity of AccountRiskStatus type by its id
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id"></param>
+        /// <returns>Task of ApiResponse (AccountRiskStatus)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AccountRiskStatus>> AccountRiskStatusItemAsyncWithHttpInfo (long? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling RisksApi->AccountRiskStatusItem");
+
+            var localVarPath = "/accountRiskStatus/item";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusItem", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AccountRiskStatus>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (AccountRiskStatus) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AccountRiskStatus)));
+        }
+
+        /// <summary>
+        ///  Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        public List<AccountRiskStatus> AccountRiskStatusItems (List<long?> ids)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = AccountRiskStatusItemsWithHttpInfo(ids);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        public ApiResponse< List<AccountRiskStatus> > AccountRiskStatusItemsWithHttpInfo (List<long?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling RisksApi->AccountRiskStatusItems");
+
+            var localVarPath = "/accountRiskStatus/items";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "ids", ids)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusItemsAsync (List<long?> ids)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = await AccountRiskStatusItemsAsyncWithHttpInfo(ids);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves multiple entities of AccountRiskStatus type by its ids
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids"></param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusItemsAsyncWithHttpInfo (List<long?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling RisksApi->AccountRiskStatusItems");
+
+            var localVarPath = "/accountRiskStatus/items";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "ids", ids)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusItems", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        public List<AccountRiskStatus> AccountRiskStatusLDependents (List<long?> masterids)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = AccountRiskStatusLDependentsWithHttpInfo(masterids);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        public ApiResponse< List<AccountRiskStatus> > AccountRiskStatusLDependentsWithHttpInfo (List<long?> masterids)
+        {
+            // verify the required parameter 'masterids' is set
+            if (masterids == null)
+                throw new ApiException(400, "Missing required parameter 'masterids' when calling RisksApi->AccountRiskStatusLDependents");
+
+            var localVarPath = "/accountRiskStatus/ldeps";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (masterids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "masterids", masterids)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusLDependents", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusLDependentsAsync (List<long?> masterids)
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = await AccountRiskStatusLDependentsAsyncWithHttpInfo(masterids);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="masterids">ids of Account entities</param>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusLDependentsAsyncWithHttpInfo (List<long?> masterids)
+        {
+            // verify the required parameter 'masterids' is set
+            if (masterids == null)
+                throw new ApiException(400, "Missing required parameter 'masterids' when calling RisksApi->AccountRiskStatusLDependents");
+
+            var localVarPath = "/accountRiskStatus/ldeps";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (masterids != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("csv", "masterids", masterids)); // query parameter
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusLDependents", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;AccountRiskStatus&gt;</returns>
+        public List<AccountRiskStatus> AccountRiskStatusList ()
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = AccountRiskStatusListWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;AccountRiskStatus&gt;</returns>
+        public ApiResponse< List<AccountRiskStatus> > AccountRiskStatusListWithHttpInfo ()
+        {
+
+            var localVarPath = "/accountRiskStatus/list";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusList", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;AccountRiskStatus&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AccountRiskStatus>> AccountRiskStatusListAsync ()
+        {
+             ApiResponse<List<AccountRiskStatus>> localVarResponse = await AccountRiskStatusListAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Retrieves all entities of AccountRiskStatus type
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;AccountRiskStatus&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AccountRiskStatus>>> AccountRiskStatusListAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/accountRiskStatus/list";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AccountRiskStatusList", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AccountRiskStatus>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (List<AccountRiskStatus>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AccountRiskStatus>)));
+        }
+
+        /// <summary>
         ///  Retrieves all entities of ContractMargin type related to Contract entity
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1961,7 +2870,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove an account position limit for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1973,7 +2882,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove an account position limit for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2040,7 +2949,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove an account position limit for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2053,7 +2962,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove an account position limit for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2120,7 +3029,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove a Risk Setting parameter.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2132,7 +3041,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove a Risk Setting parameter.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2199,7 +3108,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove a Risk Setting parameter.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2212,7 +3121,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Remove a Risk Setting parameter.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>

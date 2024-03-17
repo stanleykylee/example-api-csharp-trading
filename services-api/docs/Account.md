@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **RiskCategoryId** | **long?** |  | 
 **AutoLiqProfileId** | **long?** |  | 
 **MarginAccountType** | **string** | Hedger, Speculator | 
-**LegalStatus** | **string** | Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, Trust | 
-**Readonly** | **bool?** |  | [optional] 
+**LegalStatus** | **string** | Corporation, GP, IRA, Individual, Joint, LLC, LLP, LP, PTR, Trust | 
+**Timestamp** | **DateTime?** |  | 
+**_Readonly** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

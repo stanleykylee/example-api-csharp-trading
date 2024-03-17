@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -43,9 +42,10 @@ namespace Tradovate.Services.Model
         /// <param name="marketDataSubscriptionPlanId">marketDataSubscriptionPlanId (required).</param>
         /// <param name="year">year (required).</param>
         /// <param name="month">month (required).</param>
+        /// <param name="expired">expired (required).</param>
         /// <param name="renewalCreditCardId">renewalCreditCardId.</param>
         /// <param name="renewalAccountId">renewalAccountId.</param>
-        public MarketDataSubscription(long? id = default(long?), long? userId = default(long?), DateTime? timestamp = default(DateTime?), double? planPrice = default(double?), long? creditCardTransactionId = default(long?), long? cashBalanceLogId = default(long?), long? creditCardId = default(long?), long? accountId = default(long?), long? marketDataSubscriptionPlanId = default(long?), int? year = default(int?), int? month = default(int?), long? renewalCreditCardId = default(long?), long? renewalAccountId = default(long?))
+        public MarketDataSubscription(long? id = default(long?), long? userId = default(long?), DateTime? timestamp = default(DateTime?), double? planPrice = default(double?), long? creditCardTransactionId = default(long?), long? cashBalanceLogId = default(long?), long? creditCardId = default(long?), long? accountId = default(long?), long? marketDataSubscriptionPlanId = default(long?), int? year = default(int?), int? month = default(int?), bool? expired = default(bool?), long? renewalCreditCardId = default(long?), long? renewalAccountId = default(long?))
         {
             // to ensure "userId" is required (not null)
             if (userId == null)
@@ -100,6 +100,15 @@ namespace Tradovate.Services.Model
             else
             {
                 this.Month = month;
+            }
+            // to ensure "expired" is required (not null)
+            if (expired == null)
+            {
+                throw new InvalidDataException("expired is a required property for MarketDataSubscription and cannot be null");
+            }
+            else
+            {
+                this.Expired = expired;
             }
             this.Id = id;
             this.CreditCardTransactionId = creditCardTransactionId;
@@ -177,6 +186,12 @@ namespace Tradovate.Services.Model
         public int? Month { get; set; }
 
         /// <summary>
+        /// Gets or Sets Expired
+        /// </summary>
+        [DataMember(Name="expired", EmitDefaultValue=false)]
+        public bool? Expired { get; set; }
+
+        /// <summary>
         /// Gets or Sets RenewalCreditCardId
         /// </summary>
         [DataMember(Name="renewalCreditCardId", EmitDefaultValue=false)]
@@ -207,6 +222,7 @@ namespace Tradovate.Services.Model
             sb.Append("  MarketDataSubscriptionPlanId: ").Append(MarketDataSubscriptionPlanId).Append("\n");
             sb.Append("  Year: ").Append(Year).Append("\n");
             sb.Append("  Month: ").Append(Month).Append("\n");
+            sb.Append("  Expired: ").Append(Expired).Append("\n");
             sb.Append("  RenewalCreditCardId: ").Append(RenewalCreditCardId).Append("\n");
             sb.Append("  RenewalAccountId: ").Append(RenewalAccountId).Append("\n");
             sb.Append("}\n");
@@ -299,6 +315,11 @@ namespace Tradovate.Services.Model
                     this.Month.Equals(input.Month))
                 ) && 
                 (
+                    this.Expired == input.Expired ||
+                    (this.Expired != null &&
+                    this.Expired.Equals(input.Expired))
+                ) && 
+                (
                     this.RenewalCreditCardId == input.RenewalCreditCardId ||
                     (this.RenewalCreditCardId != null &&
                     this.RenewalCreditCardId.Equals(input.RenewalCreditCardId))
@@ -341,6 +362,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.Year.GetHashCode();
                 if (this.Month != null)
                     hashCode = hashCode * 59 + this.Month.GetHashCode();
+                if (this.Expired != null)
+                    hashCode = hashCode * 59 + this.Expired.GetHashCode();
                 if (this.RenewalCreditCardId != null)
                     hashCode = hashCode * 59 + this.RenewalCreditCardId.GetHashCode();
                 if (this.RenewalAccountId != null)

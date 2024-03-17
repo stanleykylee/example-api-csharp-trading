@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Users** | [**List&lt;User&gt;**](User.md) |  | 
 **Accounts** | [**List&lt;Account&gt;**](Account.md) |  | [optional] 
+**AccountRiskStatuses** | [**List&lt;AccountRiskStatus&gt;**](AccountRiskStatus.md) |  | [optional] 
 **MarginSnapshots** | [**List&lt;MarginSnapshot&gt;**](MarginSnapshot.md) |  | [optional] 
 **UserAccountAutoLiqs** | [**List&lt;UserAccountAutoLiq&gt;**](UserAccountAutoLiq.md) |  | [optional] 
 **CashBalances** | [**List&lt;CashBalance&gt;**](CashBalance.md) |  | [optional] 

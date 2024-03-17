@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -361,7 +361,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -372,7 +372,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -481,6 +481,27 @@ namespace Tradovate.Services.Api
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;MarginSnapshot&gt;</returns>
         ApiResponse<List<MarginSnapshot>> MarginSnapshotListWithHttpInfo ();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>SimpleResponse</returns>
+        SimpleResponse ResetDemoAccountState (ResetDemoAccountState body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of SimpleResponse</returns>
+        ApiResponse<SimpleResponse> ResetDemoAccountStateWithHttpInfo (ResetDemoAccountState body);
         /// <summary>
         /// 
         /// </summary>
@@ -924,7 +945,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -935,7 +956,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1044,6 +1065,27 @@ namespace Tradovate.Services.Api
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;MarginSnapshot&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<MarginSnapshot>>> MarginSnapshotListAsyncWithHttpInfo ();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of SimpleResponse</returns>
+        System.Threading.Tasks.Task<SimpleResponse> ResetDemoAccountStateAsync (ResetDemoAccountState body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (SimpleResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SimpleResponse>> ResetDemoAccountStateAsyncWithHttpInfo (ResetDemoAccountState body);
         /// <summary>
         /// 
         /// </summary>
@@ -3535,7 +3577,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3547,7 +3589,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3614,7 +3656,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3627,7 +3669,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Get a snapshot of an account&#x27;s current cash balance. &gt; *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a &#x60;cashBalance&#x60; in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the &#x60;user/syncrequest&#x60; endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4394,6 +4436,165 @@ namespace Tradovate.Services.Api
             return new ApiResponse<List<MarginSnapshot>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (List<MarginSnapshot>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MarginSnapshot>)));
+        }
+
+        /// <summary>
+        ///  ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>SimpleResponse</returns>
+        public SimpleResponse ResetDemoAccountState (ResetDemoAccountState body)
+        {
+             ApiResponse<SimpleResponse> localVarResponse = ResetDemoAccountStateWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of SimpleResponse</returns>
+        public ApiResponse< SimpleResponse > ResetDemoAccountStateWithHttpInfo (ResetDemoAccountState body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling AccountingApi->ResetDemoAccountState");
+
+            var localVarPath = "/account/resetdemoaccountstate";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ResetDemoAccountState", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SimpleResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (SimpleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SimpleResponse)));
+        }
+
+        /// <summary>
+        ///  ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of SimpleResponse</returns>
+        public async System.Threading.Tasks.Task<SimpleResponse> ResetDemoAccountStateAsync (ResetDemoAccountState body)
+        {
+             ApiResponse<SimpleResponse> localVarResponse = await ResetDemoAccountStateAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  ### Reset a demo account&#x27;s state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (SimpleResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SimpleResponse>> ResetDemoAccountStateAsyncWithHttpInfo (ResetDemoAccountState body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling AccountingApi->ResetDemoAccountState");
+
+            var localVarPath = "/account/resetdemoaccountstate";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ResetDemoAccountState", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SimpleResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (SimpleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SimpleResponse)));
         }
 
         /// <summary>

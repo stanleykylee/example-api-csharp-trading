@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -27,7 +27,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the playback speed of a Market Replay session.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -38,7 +38,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the playback speed of a Market Replay session.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -48,7 +48,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -59,7 +59,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -69,7 +69,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -80,7 +80,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -92,7 +92,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the playback speed of a Market Replay session.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -103,7 +103,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the playback speed of a Market Replay session.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -113,7 +113,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -124,7 +124,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -134,7 +134,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -145,7 +145,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -263,7 +263,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the playback speed of a Market Replay session.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -275,7 +275,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the playback speed of a Market Replay session.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -342,7 +342,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the playback speed of a Market Replay session.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -355,7 +355,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the playback speed of a Market Replay session.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -422,7 +422,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -434,7 +434,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -501,7 +501,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -514,7 +514,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Before beginning a Market Replay session, call this endpoint to check that the given timeframe is valid within the scope of the user&#x27;s entitlements. You should use this endpoint from a WebSocket hooked up to the Market Replay URL.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onopen &#x3D; function() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  //JSON string for midnight April 30th 2018 const startTimestamp &#x3D; new Date(&#x27;2018-04-30&#x27;).toJSON() myMarketReplaySocket.send(&#x60;replay/checkreplaysession\\n1\\n\\n${JSON.stringify({startTimestamp})}&#x60;)  //listen for response myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1)) //chop off leading &#x27;frame&#x27; char     //datas looks like this [{s: 200, i: 1, d: { checkStatus: &#x27;OK&#x27; } }]     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1)  { //id of our sent message is 1, response&#x27;s &#x60;i&#x60; field will be 1.                 console.log(d) //&#x3D;&gt; { checkStatus: &#x27;OK&#x27; }                 //if the status is OK we can send the initializeClock message             }         })     }  }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -581,7 +581,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -593,7 +593,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -660,7 +660,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -673,7 +673,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Set the inital date and time for a market replay session. Using a WebSocket connected to the Tradovate Market Replay URL, we can start a Market Replay Session which will simulate a given timeframe as if it were happening live. Each replay session creates a new replay account which gets discarded at the end of the replay session. &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://replay.tradovateapi.com/v1/websocket&#x27;  const myMarketReplaySocket &#x3D; new WebSocket(URL)  //simple WebSocket authorization procedure myMarketReplaySocket.onOpen &#x3D; function onOpen() {     myMarketReplaySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) })  const requestBody &#x3D; {     startTimestamp: new Date(&#x27;2018-04-30&#x27;).toJSON(),     speed: 100, //100%, range is from 0-400%     initialBalance: 50000 //account balance for replay session }  myMarketReplaySocket.send(&#x60;replay/initializeclock\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)  myMarketReplaySocket.addEventListener(&#x27;message&#x27;, msg &#x3D;&gt; {     const datas &#x3D; JSON.parse(msg.data.slice(1))     if(datas) {         datas.forEach(({i, d}) &#x3D;&gt; {             if(i &amp;&amp; i &#x3D;&#x3D;&#x3D; 1) { //sent id is 1, response id will be 1                 console.log(d) //&#x3D;&gt; { ok: true }             }         })     } })  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>

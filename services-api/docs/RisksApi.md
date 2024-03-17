@@ -4,6 +4,11 @@ All URIs are relative to *https://demo.tradovateapi.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AccountRiskStatusDependents**](RisksApi.md#accountriskstatusdependents) | **GET** /accountRiskStatus/deps | 
+[**AccountRiskStatusItem**](RisksApi.md#accountriskstatusitem) | **GET** /accountRiskStatus/item | 
+[**AccountRiskStatusItems**](RisksApi.md#accountriskstatusitems) | **GET** /accountRiskStatus/items | 
+[**AccountRiskStatusLDependents**](RisksApi.md#accountriskstatusldependents) | **GET** /accountRiskStatus/ldeps | 
+[**AccountRiskStatusList**](RisksApi.md#accountriskstatuslist) | **GET** /accountRiskStatus/list | 
 [**ContractMarginDependents**](RisksApi.md#contractmargindependents) | **GET** /contractMargin/deps | 
 [**ContractMarginItem**](RisksApi.md#contractmarginitem) | **GET** /contractMargin/item | 
 [**ContractMarginItems**](RisksApi.md#contractmarginitems) | **GET** /contractMargin/items | 
@@ -35,6 +40,302 @@ Method | HTTP request | Description
 [**UserAccountRiskParameterLDependents**](RisksApi.md#useraccountriskparameterldependents) | **GET** /userAccountRiskParameter/ldeps | 
 [**UserAccountRiskParameterUpdate**](RisksApi.md#useraccountriskparameterupdate) | **POST** /userAccountRiskParameter/update | 
 
+<a name="accountriskstatusdependents"></a>
+# **AccountRiskStatusDependents**
+> List<AccountRiskStatus> AccountRiskStatusDependents (long? masterid)
+
+
+
+Retrieves all entities of AccountRiskStatus type related to Account entity
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class AccountRiskStatusDependentsExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new RisksApi();
+            var masterid = 789;  // long? | id of Account entity
+
+            try
+            {
+                List&lt;AccountRiskStatus&gt; result = apiInstance.AccountRiskStatusDependents(masterid);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RisksApi.AccountRiskStatusDependents: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **masterid** | **long?**| id of Account entity | 
+
+### Return type
+
+[**List<AccountRiskStatus>**](AccountRiskStatus.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="accountriskstatusitem"></a>
+# **AccountRiskStatusItem**
+> AccountRiskStatus AccountRiskStatusItem (long? id)
+
+
+
+Retrieves an entity of AccountRiskStatus type by its id
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class AccountRiskStatusItemExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new RisksApi();
+            var id = 789;  // long? | 
+
+            try
+            {
+                AccountRiskStatus result = apiInstance.AccountRiskStatusItem(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RisksApi.AccountRiskStatusItem: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **long?**|  | 
+
+### Return type
+
+[**AccountRiskStatus**](AccountRiskStatus.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="accountriskstatusitems"></a>
+# **AccountRiskStatusItems**
+> List<AccountRiskStatus> AccountRiskStatusItems (List<long?> ids)
+
+
+
+Retrieves multiple entities of AccountRiskStatus type by its ids
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class AccountRiskStatusItemsExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new RisksApi();
+            var ids = new List<long?>(); // List<long?> | 
+
+            try
+            {
+                List&lt;AccountRiskStatus&gt; result = apiInstance.AccountRiskStatusItems(ids);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RisksApi.AccountRiskStatusItems: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | [**List&lt;long?&gt;**](long?.md)|  | 
+
+### Return type
+
+[**List<AccountRiskStatus>**](AccountRiskStatus.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="accountriskstatusldependents"></a>
+# **AccountRiskStatusLDependents**
+> List<AccountRiskStatus> AccountRiskStatusLDependents (List<long?> masterids)
+
+
+
+Retrieves all entities of AccountRiskStatus type related to multiple entities of Account type
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class AccountRiskStatusLDependentsExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new RisksApi();
+            var masterids = new List<long?>(); // List<long?> | ids of Account entities
+
+            try
+            {
+                List&lt;AccountRiskStatus&gt; result = apiInstance.AccountRiskStatusLDependents(masterids);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RisksApi.AccountRiskStatusLDependents: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **masterids** | [**List&lt;long?&gt;**](long?.md)| ids of Account entities | 
+
+### Return type
+
+[**List<AccountRiskStatus>**](AccountRiskStatus.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="accountriskstatuslist"></a>
+# **AccountRiskStatusList**
+> List<AccountRiskStatus> AccountRiskStatusList ()
+
+
+
+Retrieves all entities of AccountRiskStatus type
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class AccountRiskStatusListExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new RisksApi();
+
+            try
+            {
+                List&lt;AccountRiskStatus&gt; result = apiInstance.AccountRiskStatusList();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling RisksApi.AccountRiskStatusList: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List<AccountRiskStatus>**](AccountRiskStatus.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="contractmargindependents"></a>
 # **ContractMarginDependents**
 > List<ContractMargin> ContractMarginDependents (long? masterid)
@@ -281,6 +582,8 @@ Name | Type | Description  | Notes
 
 
 
+### Remove an account position limit for a user.
+
 ### Example
 ```csharp
 using System;
@@ -338,6 +641,8 @@ Name | Type | Description  | Notes
 > DeleteResultResponse DeleteUserAccountRiskParameter (DeleteUserAccountRiskParameter body)
 
 
+
+### Remove a Risk Setting parameter.
 
 ### Example
 ```csharp

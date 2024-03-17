@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -27,7 +27,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -38,7 +38,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -48,7 +48,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Shows Basic user data for the calling user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OAuthMeResponse</returns>
@@ -58,7 +58,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Shows Basic user data for the calling user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OAuthMeResponse</returns>
@@ -67,7 +67,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -78,7 +78,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -88,7 +88,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request a renewal for an existing access token.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>AccessTokenResponse</returns>
@@ -98,7 +98,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request a renewal for an existing access token.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of AccessTokenResponse</returns>
@@ -109,7 +109,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -120,7 +120,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -130,7 +130,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Shows Basic user data for the calling user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OAuthMeResponse</returns>
@@ -140,7 +140,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Shows Basic user data for the calling user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OAuthMeResponse)</returns>
@@ -149,7 +149,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -160,7 +160,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -170,7 +170,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request a renewal for an existing access token.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of AccessTokenResponse</returns>
@@ -180,7 +180,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request a renewal for an existing access token.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (AccessTokenResponse)</returns>
@@ -297,7 +297,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -309,7 +309,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -370,7 +370,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -383,7 +383,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  #### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;https://live.tradovateapi.com/v1&#x27;  const credentials &#x3D; {     name:       \&quot;Your credentials here\&quot;,     password:   \&quot;Your credentials here\&quot;,     appId:      \&quot;Sample App\&quot;,     appVersion: \&quot;1.0\&quot;,     cid:        0,     sec:        \&quot;Your API secret here\&quot; }  async function getAccessToken() {     let response &#x3D; await fetch(URL + &#x27;/auth/accessTokenRequest&#x27;, {         method: &#x27;POST&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;         }     })     let result &#x3D; await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } &#x3D; await getAccessToken()      //use access token } &#x60;&#x60;&#x60;  ### Using an Access Token  &#x60;&#x60;&#x60;js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response &#x3D; await fetch(URL + &#x27;/account/list&#x27;, {         method: &#x27;GET&#x27;,         headers: {             &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,             Authorization: &#x60;Bearer ${accessToken}&#x60; //Access Token use in HTTP requests         }     })     let result &#x3D; await response.json()     return result }  &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -444,7 +444,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Shows Basic user data for the calling user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>OAuthMeResponse</returns>
@@ -455,7 +455,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Shows Basic user data for the calling user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of OAuthMeResponse</returns>
@@ -509,7 +509,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Shows Basic user data for the calling user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of OAuthMeResponse</returns>
@@ -521,7 +521,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Shows Basic user data for the calling user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (OAuthMeResponse)</returns>
@@ -575,7 +575,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -587,7 +587,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -648,7 +648,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -661,7 +661,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -722,7 +722,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request a renewal for an existing access token.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>AccessTokenResponse</returns>
@@ -733,7 +733,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request a renewal for an existing access token.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of AccessTokenResponse</returns>
@@ -787,7 +787,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request a renewal for an existing access token.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of AccessTokenResponse</returns>
@@ -799,7 +799,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request a renewal for an existing access token.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (AccessTokenResponse)</returns>

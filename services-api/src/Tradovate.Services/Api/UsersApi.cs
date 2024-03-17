@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -27,7 +27,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Called to accept a given trading permission granted by another party.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -38,7 +38,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Called to accept a given trading permission granted by another party.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -48,7 +48,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to setup a second market data subscription with active auto-renewal.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -59,7 +59,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to setup a second market data subscription with active auto-renewal.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -69,7 +69,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -80,7 +80,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -90,7 +90,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a subscription to Market Data for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -101,7 +101,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a subscription to Market Data for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -111,7 +111,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -122,7 +122,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -132,7 +132,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to add a Tradovate Trader membership plan for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -143,7 +143,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to add a Tradovate Trader membership plan for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -157,8 +157,8 @@ namespace Tradovate.Services.Api
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>SecondMarketDataSubscriptionResponse</returns>
-        SecondMarketDataSubscriptionResponse CancelSecondMarketDataSubscription (CancelSecondMarketDataSubscription body);
+        /// <returns>CancelEverythingResponse</returns>
+        CancelEverythingResponse CancelEverything (CancelEverything body);
 
         /// <summary>
         /// 
@@ -168,13 +168,34 @@ namespace Tradovate.Services.Api
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
+        /// <returns>ApiResponse of CancelEverythingResponse</returns>
+        ApiResponse<CancelEverythingResponse> CancelEverythingWithHttpInfo (CancelEverything body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Cancel a second market data subscription for a user.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>SecondMarketDataSubscriptionResponse</returns>
+        SecondMarketDataSubscriptionResponse CancelSecondMarketDataSubscription (CancelSecondMarketDataSubscription body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Cancel a second market data subscription for a user.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
         /// <returns>ApiResponse of SecondMarketDataSubscriptionResponse</returns>
         ApiResponse<SecondMarketDataSubscriptionResponse> CancelSecondMarketDataSubscriptionWithHttpInfo (CancelSecondMarketDataSubscription body);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -185,7 +206,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -195,7 +216,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel a Tradovate Trader membership plan.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -206,7 +227,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel a Tradovate Trader membership plan.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -216,7 +237,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the permissions for a Trader plugin.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -227,7 +248,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the permissions for a Trader plugin.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -321,7 +342,28 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>TradingPermissionResponse</returns>
+        TradingPermissionResponse CreateTradingPermission (CreateTradingPermission body);
+
+        /// <summary>
         /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of TradingPermissionResponse</returns>
+        ApiResponse<TradingPermissionResponse> CreateTradingPermissionWithHttpInfo (CreateTradingPermission body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Query the granted trading permissions associated with this account.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -332,7 +374,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the granted trading permissions associated with this account.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -342,7 +384,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the current price of a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -353,7 +395,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the current price of a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -508,7 +550,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to modify account username and password.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -519,7 +561,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to modify account username and password.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -529,7 +571,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account email address information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -540,7 +582,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account email address information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -550,7 +592,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account password information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -561,7 +603,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account password information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -571,7 +613,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request to open a Demo account for a user. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -582,7 +624,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request to open a Demo account for a user. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -697,7 +739,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -708,7 +750,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -718,7 +760,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -729,12 +771,33 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>ApiResponse of TradingPermissionResponse</returns>
         ApiResponse<TradingPermissionResponse> RevokeTradingPermissionWithHttpInfo (RevokeTradingPermission body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>SimpleResponse</returns>
+        SimpleResponse RevokeTradingPermissions (RevokeTradingPermissions body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of SimpleResponse</returns>
+        ApiResponse<SimpleResponse> RevokeTradingPermissionsWithHttpInfo (RevokeTradingPermissions body);
         /// <summary>
         /// 
         /// </summary>
@@ -842,7 +905,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used by B2B partners to create users for their own organizations.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -853,7 +916,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used by B2B partners to create users for their own organizations.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -863,7 +926,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -874,7 +937,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1510,7 +1573,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Called to accept a given trading permission granted by another party.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1521,7 +1584,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Called to accept a given trading permission granted by another party.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1531,7 +1594,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to setup a second market data subscription with active auto-renewal.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1542,7 +1605,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to setup a second market data subscription with active auto-renewal.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1552,7 +1615,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1563,7 +1626,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1573,7 +1636,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a subscription to Market Data for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1584,7 +1647,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a subscription to Market Data for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1594,7 +1657,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1605,7 +1668,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Add a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1615,7 +1678,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to add a Tradovate Trader membership plan for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1626,7 +1689,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to add a Tradovate Trader membership plan for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1640,8 +1703,8 @@ namespace Tradovate.Services.Api
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>Task of SecondMarketDataSubscriptionResponse</returns>
-        System.Threading.Tasks.Task<SecondMarketDataSubscriptionResponse> CancelSecondMarketDataSubscriptionAsync (CancelSecondMarketDataSubscription body);
+        /// <returns>Task of CancelEverythingResponse</returns>
+        System.Threading.Tasks.Task<CancelEverythingResponse> CancelEverythingAsync (CancelEverything body);
 
         /// <summary>
         /// 
@@ -1651,13 +1714,34 @@ namespace Tradovate.Services.Api
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (CancelEverythingResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CancelEverythingResponse>> CancelEverythingAsyncWithHttpInfo (CancelEverything body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Cancel a second market data subscription for a user.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of SecondMarketDataSubscriptionResponse</returns>
+        System.Threading.Tasks.Task<SecondMarketDataSubscriptionResponse> CancelSecondMarketDataSubscriptionAsync (CancelSecondMarketDataSubscription body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Cancel a second market data subscription for a user.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
         /// <returns>Task of ApiResponse (SecondMarketDataSubscriptionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<SecondMarketDataSubscriptionResponse>> CancelSecondMarketDataSubscriptionAsyncWithHttpInfo (CancelSecondMarketDataSubscription body);
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1668,7 +1752,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1678,7 +1762,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel a Tradovate Trader membership plan.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1689,7 +1773,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Cancel a Tradovate Trader membership plan.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1699,7 +1783,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the permissions for a Trader plugin.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1710,7 +1794,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change the permissions for a Trader plugin.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1804,7 +1888,28 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of TradingPermissionResponse</returns>
+        System.Threading.Tasks.Task<TradingPermissionResponse> CreateTradingPermissionAsync (CreateTradingPermission body);
+
+        /// <summary>
         /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (TradingPermissionResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TradingPermissionResponse>> CreateTradingPermissionAsyncWithHttpInfo (CreateTradingPermission body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// ### Query the granted trading permissions associated with this account.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1815,7 +1920,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the granted trading permissions associated with this account.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1825,7 +1930,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the current price of a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1836,7 +1941,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Query the current price of a second market data subscription for a user.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1991,7 +2096,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to modify account username and password.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2002,7 +2107,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used to modify account username and password.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2012,7 +2117,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account email address information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2023,7 +2128,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account email address information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2033,7 +2138,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account password information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2044,7 +2149,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Change account password information.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2054,7 +2159,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request to open a Demo account for a user. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2065,7 +2170,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Request to open a Demo account for a user. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2180,7 +2285,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2191,7 +2296,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2201,7 +2306,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2212,12 +2317,33 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <returns>Task of ApiResponse (TradingPermissionResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TradingPermissionResponse>> RevokeTradingPermissionAsyncWithHttpInfo (RevokeTradingPermission body);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of SimpleResponse</returns>
+        System.Threading.Tasks.Task<SimpleResponse> RevokeTradingPermissionsAsync (RevokeTradingPermissions body);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (SimpleResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SimpleResponse>> RevokeTradingPermissionsAsyncWithHttpInfo (RevokeTradingPermissions body);
         /// <summary>
         /// 
         /// </summary>
@@ -2325,7 +2451,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used by B2B partners to create users for their own organizations.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2336,7 +2462,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used by B2B partners to create users for their own organizations.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2346,7 +2472,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2357,7 +2483,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3099,7 +3225,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Called to accept a given trading permission granted by another party.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3111,7 +3237,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Called to accept a given trading permission granted by another party.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3178,7 +3304,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Called to accept a given trading permission granted by another party.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3191,7 +3317,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Called to accept a given trading permission granted by another party.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3258,7 +3384,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to setup a second market data subscription with active auto-renewal.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3270,7 +3396,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to setup a second market data subscription with active auto-renewal.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3337,7 +3463,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to setup a second market data subscription with active auto-renewal.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3350,7 +3476,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to setup a second market data subscription with active auto-renewal.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3417,7 +3543,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3429,7 +3555,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3496,7 +3622,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3509,7 +3635,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3576,7 +3702,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a subscription to Market Data for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3588,7 +3714,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a subscription to Market Data for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3655,7 +3781,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a subscription to Market Data for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3668,7 +3794,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a subscription to Market Data for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3735,7 +3861,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3747,7 +3873,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3814,7 +3940,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3827,7 +3953,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Add a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3894,7 +4020,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to add a Tradovate Trader membership plan for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3906,7 +4032,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to add a Tradovate Trader membership plan for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3973,7 +4099,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to add a Tradovate Trader membership plan for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -3986,7 +4112,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to add a Tradovate Trader membership plan for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4057,6 +4183,165 @@ namespace Tradovate.Services.Api
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
+        /// <returns>CancelEverythingResponse</returns>
+        public CancelEverythingResponse CancelEverything (CancelEverything body)
+        {
+             ApiResponse<CancelEverythingResponse> localVarResponse = CancelEverythingWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of CancelEverythingResponse</returns>
+        public ApiResponse< CancelEverythingResponse > CancelEverythingWithHttpInfo (CancelEverything body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->CancelEverything");
+
+            var localVarPath = "/user/canceleverything";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CancelEverything", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CancelEverythingResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CancelEverythingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelEverythingResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of CancelEverythingResponse</returns>
+        public async System.Threading.Tasks.Task<CancelEverythingResponse> CancelEverythingAsync (CancelEverything body)
+        {
+             ApiResponse<CancelEverythingResponse> localVarResponse = await CancelEverythingAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (CancelEverythingResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CancelEverythingResponse>> CancelEverythingAsyncWithHttpInfo (CancelEverything body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->CancelEverything");
+
+            var localVarPath = "/user/canceleverything";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CancelEverything", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<CancelEverythingResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (CancelEverythingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CancelEverythingResponse)));
+        }
+
+        /// <summary>
+        ///  ### Cancel a second market data subscription for a user.
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
         /// <returns>SecondMarketDataSubscriptionResponse</returns>
         public SecondMarketDataSubscriptionResponse CancelSecondMarketDataSubscription (CancelSecondMarketDataSubscription body)
         {
@@ -4065,7 +4350,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4132,7 +4417,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4145,7 +4430,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4212,7 +4497,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4224,7 +4509,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4291,7 +4576,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4304,7 +4589,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel the auto-renewal for a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4371,7 +4656,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a Tradovate Trader membership plan.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4383,7 +4668,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a Tradovate Trader membership plan.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4450,7 +4735,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a Tradovate Trader membership plan.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4463,7 +4748,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Cancel a Tradovate Trader membership plan.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4530,7 +4815,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the permissions for a Trader plugin.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4542,7 +4827,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the permissions for a Trader plugin.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4609,7 +4894,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the permissions for a Trader plugin.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -4622,7 +4907,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change the permissions for a Trader plugin.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5261,7 +5546,166 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>TradingPermissionResponse</returns>
+        public TradingPermissionResponse CreateTradingPermission (CreateTradingPermission body)
+        {
+             ApiResponse<TradingPermissionResponse> localVarResponse = CreateTradingPermissionWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of TradingPermissionResponse</returns>
+        public ApiResponse< TradingPermissionResponse > CreateTradingPermissionWithHttpInfo (CreateTradingPermission body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->CreateTradingPermission");
+
+            var localVarPath = "/user/createtradingpermission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateTradingPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TradingPermissionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (TradingPermissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TradingPermissionResponse)));
+        }
+
+        /// <summary>
+        ///  ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of TradingPermissionResponse</returns>
+        public async System.Threading.Tasks.Task<TradingPermissionResponse> CreateTradingPermissionAsync (CreateTradingPermission body)
+        {
+             ApiResponse<TradingPermissionResponse> localVarResponse = await CreateTradingPermissionAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  ### Create a trading permission Create a new trading permission to account with ID &#x60;accountId&#x60; via that user&#x27;s ID, &#x60;userId&#x60;.
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (TradingPermissionResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<TradingPermissionResponse>> CreateTradingPermissionAsyncWithHttpInfo (CreateTradingPermission body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->CreateTradingPermission");
+
+            var localVarPath = "/user/createtradingpermission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateTradingPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TradingPermissionResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (TradingPermissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TradingPermissionResponse)));
+        }
+
+        /// <summary>
+        ///  ### Query the granted trading permissions associated with this account.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5273,7 +5717,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the granted trading permissions associated with this account.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5340,7 +5784,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the granted trading permissions associated with this account.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5353,7 +5797,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the granted trading permissions associated with this account.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5420,7 +5864,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the current price of a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5432,7 +5876,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the current price of a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5499,7 +5943,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the current price of a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -5512,7 +5956,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Query the current price of a second market data subscription for a user.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6600,7 +7044,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to modify account username and password.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6612,7 +7056,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to modify account username and password.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6679,7 +7123,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to modify account username and password.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6692,7 +7136,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used to modify account username and password.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6759,7 +7203,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account email address information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6771,7 +7215,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account email address information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6838,7 +7282,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account email address information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6851,7 +7295,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account email address information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6918,7 +7362,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account password information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6930,7 +7374,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account password information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6997,7 +7441,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account password information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7010,7 +7454,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Change account password information.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7077,7 +7521,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request to open a Demo account for a user. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7089,7 +7533,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request to open a Demo account for a user. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7156,7 +7600,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request to open a Demo account for a user. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7169,7 +7613,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Request to open a Demo account for a user. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7951,7 +8395,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -7963,7 +8407,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8030,7 +8474,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8043,7 +8487,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party&#x27;s own accounts.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8110,7 +8554,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8122,7 +8566,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8189,7 +8633,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8202,7 +8646,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8266,6 +8710,165 @@ namespace Tradovate.Services.Api
             return new ApiResponse<TradingPermissionResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (TradingPermissionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TradingPermissionResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>SimpleResponse</returns>
+        public SimpleResponse RevokeTradingPermissions (RevokeTradingPermissions body)
+        {
+             ApiResponse<SimpleResponse> localVarResponse = RevokeTradingPermissionsWithHttpInfo(body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>ApiResponse of SimpleResponse</returns>
+        public ApiResponse< SimpleResponse > RevokeTradingPermissionsWithHttpInfo (RevokeTradingPermissions body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->RevokeTradingPermissions");
+
+            var localVarPath = "/user/revoketradingpermissions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RevokeTradingPermissions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SimpleResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (SimpleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SimpleResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of SimpleResponse</returns>
+        public async System.Threading.Tasks.Task<SimpleResponse> RevokeTradingPermissionsAsync (RevokeTradingPermissions body)
+        {
+             ApiResponse<SimpleResponse> localVarResponse = await RevokeTradingPermissionsAsyncWithHttpInfo(body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"></param>
+        /// <returns>Task of ApiResponse (SimpleResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SimpleResponse>> RevokeTradingPermissionsAsyncWithHttpInfo (RevokeTradingPermissions body)
+        {
+            // verify the required parameter 'body' is set
+            if (body == null)
+                throw new ApiException(400, "Missing required parameter 'body' when calling UsersApi->RevokeTradingPermissions");
+
+            var localVarPath = "/user/revoketradingpermissions";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+            // authentication (bearer_access_token) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RevokeTradingPermissions", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SimpleResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (SimpleResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SimpleResponse)));
         }
 
         /// <summary>
@@ -8972,7 +9575,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used by B2B partners to create users for their own organizations.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -8984,7 +9587,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used by B2B partners to create users for their own organizations.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9051,7 +9654,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used by B2B partners to create users for their own organizations.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9064,7 +9667,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used by B2B partners to create users for their own organizations.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9131,7 +9734,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9143,7 +9746,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9210,7 +9813,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9223,7 +9826,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;wss://live.tradovateapi.com/v1/websocket&#x27;  const myWebSocket &#x3D; new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen &#x3D; function() {     myWebSocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  const requestBody &#x3D; {     users: [12345] }  myWebSocket.send(&#x60;user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}&#x60;)   //starts a subscription to real-time user data. &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>

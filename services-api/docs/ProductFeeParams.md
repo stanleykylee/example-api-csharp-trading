@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **NfaCurrencyId** | **long?** |  | [optional] 
 **BrokerageFee** | **double?** |  | [optional] 
 **BrokerageCurrencyId** | **long?** |  | [optional] 
-**IpFee** | **double?** |  | [optional] 
+**IpFee** | **double?** | IP/TT Fee | [optional] 
 **IpCurrencyId** | **long?** |  | [optional] 
 **Commission** | **double?** |  | [optional] 
 **CommissionCurrencyId** | **long?** |  | [optional] 

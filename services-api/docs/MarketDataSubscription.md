@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **MarketDataSubscriptionPlanId** | **long?** |  | 
 **Year** | **int?** |  | 
 **Month** | **int?** |  | 
+**Expired** | **bool?** |  | 
 **RenewalCreditCardId** | **long?** |  | [optional] 
 **RenewalAccountId** | **long?** |  | [optional] 
 

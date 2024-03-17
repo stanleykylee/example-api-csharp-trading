@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Category** | **string** |  | 
 **Trial** | **bool?** |  | 
 **Duration** | **int?** |  | 
-**DurationUnits** | **string** | Month, Quarter, Week, Year | 
+**DurationUnits** | **string** | Lifetime, Month, Quarter, Week, Year | 
 **RiskCategoryId** | **long?** |  | [optional] 
 **MultipleAccounts** | **bool?** |  | [optional] 
 **OrganizationId** | **long?** |  | [optional] 

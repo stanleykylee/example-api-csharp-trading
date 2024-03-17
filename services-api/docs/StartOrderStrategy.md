@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Symbol** | **string** |  | 
 **OrderStrategyTypeId** | **long?** |  | 
 **Action** | **string** | Buy, Sell | 
-**Params** | **string** |  | [optional] 
+**_Params** | **string** |  | [optional] 
 **Uuid** | **string** |  | [optional] 
 **CustomTag50** | **string** |  | [optional] 
 

@@ -922,6 +922,8 @@ This endpoint does not need any parameter.
 
 
 
+### Silences an \"incomplete\" notification.  An \"Incomplete\" notification is one that has not yet been viewed by a user. Once a user has interacted with a notification it should be \"completed\".
+
 ### Example
 ```csharp
 using System;
@@ -979,6 +981,8 @@ Name | Type | Description  | Notes
 > AlertResponse CreateAlert (CreateAlert body)
 
 
+
+### Create an alert entity associated with the user. 
 
 ### Example
 ```csharp
@@ -1038,6 +1042,8 @@ Name | Type | Description  | Notes
 
 
 
+### Remove an alert entity associated with the user.
+
 ### Example
 ```csharp
 using System;
@@ -1095,6 +1101,8 @@ Name | Type | Description  | Notes
 > AlertResponse DismissAlert (DismissAlert body)
 
 
+
+### Dismiss an alert for a user.
 
 ### Example
 ```csharp
@@ -1154,6 +1162,8 @@ Name | Type | Description  | Notes
 
 
 
+### Mark an alert entity as 'read' for a user.
+
 ### Example
 ```csharp
 using System;
@@ -1211,6 +1221,8 @@ Name | Type | Description  | Notes
 > AlertResponse ModifyAlert (ModifyAlert body)
 
 
+
+### Change the parameters of an existing alert.
 
 ### Example
 ```csharp
@@ -1270,6 +1282,8 @@ Name | Type | Description  | Notes
 
 
 
+### Resets an alert.  You can use this method after an alert has been triggered to keep the alert and wait for the alert to be triggered again.
+
 ### Example
 ```csharp
 using System;
@@ -1327,6 +1341,8 @@ Name | Type | Description  | Notes
 > AdminAlertSignalResponse TakeAlertSignalOwnership (TakeAlertSignalOwnership body)
 
 
+
+### Internal. Can be used by B2B partners to mark an adminAlertSignal entity for further handling.
 
 ### Example
 ```csharp

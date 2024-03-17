@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**MarginSnapshotItems**](AccountingApi.md#marginsnapshotitems) | **GET** /marginSnapshot/items | 
 [**MarginSnapshotLDependents**](AccountingApi.md#marginsnapshotldependents) | **GET** /marginSnapshot/ldeps | 
 [**MarginSnapshotList**](AccountingApi.md#marginsnapshotlist) | **GET** /marginSnapshot/list | 
+[**ResetDemoAccountState**](AccountingApi.md#resetdemoaccountstate) | **POST** /account/resetdemoaccountstate | 
 [**TradingPermissionDependents**](AccountingApi.md#tradingpermissiondependents) | **GET** /tradingPermission/deps | 
 [**TradingPermissionItem**](AccountingApi.md#tradingpermissionitem) | **GET** /tradingPermission/item | 
 [**TradingPermissionItems**](AccountingApi.md#tradingpermissionitems) | **GET** /tradingPermission/items | 
@@ -992,6 +993,8 @@ Name | Type | Description  | Notes
 
 
 
+### Get a snapshot of an account's current cash balance. > *Note*: Using this endpoint many times in succession is an anti-pattern. If you need to check a `cashBalance` in real-time, instead use a WebSocket connected to the standard Tradovate WebSocket URL and initialize a real-time user data subscription via the `user/syncrequest` endpoint.
+
 ### Example
 ```csharp
 using System;
@@ -1337,6 +1340,66 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="resetdemoaccountstate"></a>
+# **ResetDemoAccountState**
+> SimpleResponse ResetDemoAccountState (ResetDemoAccountState body)
+
+
+
+### Reset a demo account's state to a previous day Return 1 or more simulation accounts to their state at market open on the given TradeDate date. 
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class ResetDemoAccountStateExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new AccountingApi();
+            var body = new ResetDemoAccountState(); // ResetDemoAccountState | 
+
+            try
+            {
+                SimpleResponse result = apiInstance.ResetDemoAccountState(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountingApi.ResetDemoAccountState: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ResetDemoAccountState**](ResetDemoAccountState.md)|  | 
+
+### Return type
+
+[**SimpleResponse**](SimpleResponse.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

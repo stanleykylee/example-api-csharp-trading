@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**AddMarketDataSubscription**](UsersApi.md#addmarketdatasubscription) | **POST** /user/addmarketdatasubscription | 
 [**AddSecondMarketDataSubscription**](UsersApi.md#addsecondmarketdatasubscription) | **POST** /user/addsecondmarketdatasubscription | 
 [**AddTradovateSubscription**](UsersApi.md#addtradovatesubscription) | **POST** /user/addtradovatesubscription | 
+[**CancelEverything**](UsersApi.md#canceleverything) | **POST** /user/canceleverything | 
 [**CancelSecondMarketDataSubscription**](UsersApi.md#cancelsecondmarketdatasubscription) | **POST** /user/cancelsecondmarketdatasubscription | 
 [**CancelSecondMarketDataSubscriptionRenewal**](UsersApi.md#cancelsecondmarketdatasubscriptionrenewal) | **POST** /user/cancelsecondmarketdatasubscriptionrenewal | 
 [**CancelTradovateSubscription**](UsersApi.md#canceltradovatesubscription) | **POST** /user/canceltradovatesubscription | 
@@ -18,6 +19,7 @@ Method | HTTP request | Description
 [**ContactInfoItem**](UsersApi.md#contactinfoitem) | **GET** /contactInfo/item | 
 [**ContactInfoItems**](UsersApi.md#contactinfoitems) | **GET** /contactInfo/items | 
 [**ContactInfoLDependents**](UsersApi.md#contactinfoldependents) | **GET** /contactInfo/ldeps | 
+[**CreateTradingPermission**](UsersApi.md#createtradingpermission) | **POST** /user/createtradingpermission | 
 [**GetAccountTradingPermissions**](UsersApi.md#getaccounttradingpermissions) | **POST** /user/getaccounttradingpermissions | 
 [**GetSecondMarketDataSubscriptionCost**](UsersApi.md#getsecondmarketdatasubscriptioncost) | **POST** /user/getsecondmarketdatasubscriptioncost | 
 [**MarketDataSubscriptionCreate**](UsersApi.md#marketdatasubscriptioncreate) | **POST** /marketDataSubscription/create | 
@@ -38,6 +40,7 @@ Method | HTTP request | Description
 [**OrganizationSuggest**](UsersApi.md#organizationsuggest) | **GET** /organization/suggest | 
 [**RequestTradingPermission**](UsersApi.md#requesttradingpermission) | **POST** /user/requesttradingpermission | 
 [**RevokeTradingPermission**](UsersApi.md#revoketradingpermission) | **POST** /user/revoketradingpermission | 
+[**RevokeTradingPermissions**](UsersApi.md#revoketradingpermissions) | **POST** /user/revoketradingpermissions | 
 [**SecondMarketDataSubscriptionDependents**](UsersApi.md#secondmarketdatasubscriptiondependents) | **GET** /secondMarketDataSubscription/deps | 
 [**SecondMarketDataSubscriptionItem**](UsersApi.md#secondmarketdatasubscriptionitem) | **GET** /secondMarketDataSubscription/item | 
 [**SecondMarketDataSubscriptionItems**](UsersApi.md#secondmarketdatasubscriptionitems) | **GET** /secondMarketDataSubscription/items | 
@@ -81,6 +84,8 @@ Method | HTTP request | Description
 > TradingPermissionResponse AcceptTradingPermission (AcceptTradingPermission body)
 
 
+
+### Called to accept a given trading permission granted by another party.
 
 ### Example
 ```csharp
@@ -140,6 +145,8 @@ Name | Type | Description  | Notes
 
 
 
+### Used to setup a second market data subscription with active auto-renewal.
+
 ### Example
 ```csharp
 using System;
@@ -197,6 +204,8 @@ Name | Type | Description  | Notes
 > EntitlementSubscriptionResponse AddEntitlementSubscription (AddEntitlementSubscription body)
 
 
+
+### For use with Add-ons, allows for purchase of entitlements such as Market Replay.
 
 ### Example
 ```csharp
@@ -256,6 +265,8 @@ Name | Type | Description  | Notes
 
 
 
+### Add a subscription to Market Data for a user.
+
 ### Example
 ```csharp
 using System;
@@ -313,6 +324,8 @@ Name | Type | Description  | Notes
 > SecondMarketDataSubscriptionResponse AddSecondMarketDataSubscription (AddSecondMarketDataSubscription body)
 
 
+
+### Add a second market data subscription for a user.
 
 ### Example
 ```csharp
@@ -372,6 +385,8 @@ Name | Type | Description  | Notes
 
 
 
+### Used to add a Tradovate Trader membership plan for a user.
+
 ### Example
 ```csharp
 using System;
@@ -424,11 +439,71 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="canceleverything"></a>
+# **CancelEverything**
+> CancelEverythingResponse CancelEverything (CancelEverything body)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class CancelEverythingExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new UsersApi();
+            var body = new CancelEverything(); // CancelEverything | 
+
+            try
+            {
+                CancelEverythingResponse result = apiInstance.CancelEverything(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.CancelEverything: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CancelEverything**](CancelEverything.md)|  | 
+
+### Return type
+
+[**CancelEverythingResponse**](CancelEverythingResponse.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="cancelsecondmarketdatasubscription"></a>
 # **CancelSecondMarketDataSubscription**
 > SecondMarketDataSubscriptionResponse CancelSecondMarketDataSubscription (CancelSecondMarketDataSubscription body)
 
 
+
+### Cancel a second market data subscription for a user.
 
 ### Example
 ```csharp
@@ -488,6 +563,8 @@ Name | Type | Description  | Notes
 
 
 
+### Cancel the auto-renewal for a second market data subscription for a user.
+
 ### Example
 ```csharp
 using System;
@@ -546,6 +623,8 @@ Name | Type | Description  | Notes
 
 
 
+### Cancel a Tradovate Trader membership plan.
+
 ### Example
 ```csharp
 using System;
@@ -603,6 +682,8 @@ Name | Type | Description  | Notes
 > SimpleResponse ChangePluginPermission (ChangePluginPermission body)
 
 
+
+### Change the permissions for a Trader plugin.
 
 ### Example
 ```csharp
@@ -896,11 +977,73 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="createtradingpermission"></a>
+# **CreateTradingPermission**
+> TradingPermissionResponse CreateTradingPermission (CreateTradingPermission body)
+
+
+
+### Create a trading permission Create a new trading permission to account with ID `accountId` via that user's ID, `userId`.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class CreateTradingPermissionExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new UsersApi();
+            var body = new CreateTradingPermission(); // CreateTradingPermission | 
+
+            try
+            {
+                TradingPermissionResponse result = apiInstance.CreateTradingPermission(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.CreateTradingPermission: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateTradingPermission**](CreateTradingPermission.md)|  | 
+
+### Return type
+
+[**TradingPermissionResponse**](TradingPermissionResponse.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getaccounttradingpermissions"></a>
 # **GetAccountTradingPermissions**
 > TradingPermissionsResponse GetAccountTradingPermissions (GetAccountTradingPermissions body)
 
 
+
+### Query the granted trading permissions associated with this account.
 
 ### Example
 ```csharp
@@ -959,6 +1102,8 @@ Name | Type | Description  | Notes
 > SecondMarketDataSubscriptionCostResponse GetSecondMarketDataSubscriptionCost (GetSecondMarketDataSubscriptionCost body)
 
 
+
+### Query the current price of a second market data subscription for a user.
 
 ### Example
 ```csharp
@@ -1434,6 +1579,8 @@ Name | Type | Description  | Notes
 
 
 
+### Used to modify account username and password.
+
 ### Example
 ```csharp
 using System;
@@ -1491,6 +1638,8 @@ Name | Type | Description  | Notes
 > UserStatusMessage ModifyEmailAddress (ModifyEmailAddress body)
 
 
+
+### Change account email address information.
 
 ### Example
 ```csharp
@@ -1550,6 +1699,8 @@ Name | Type | Description  | Notes
 
 
 
+### Change account password information.
+
 ### Example
 ```csharp
 using System;
@@ -1607,6 +1758,8 @@ Name | Type | Description  | Notes
 > OpenDemoAccountResponse OpenDemoAccount (OpenDemoAccount body)
 
 
+
+### Request to open a Demo account for a user. 
 
 ### Example
 ```csharp
@@ -1964,6 +2117,8 @@ Name | Type | Description  | Notes
 
 
 
+### Send a request to grant trading permission for your account to another party. Once this request is reviewed by our accounting and compliance, the other party will be allowed to access your account as if it was one of that party's own accounts.
+
 ### Example
 ```csharp
 using System;
@@ -2022,6 +2177,8 @@ Name | Type | Description  | Notes
 
 
 
+### Revoke an existing trading permission granted to another party. If a user wants to end the terms of a granted permission to trade using your account, a user can revoke those permissions using this endpoint.
+
 ### Example
 ```csharp
 using System;
@@ -2063,6 +2220,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TradingPermissionResponse**](TradingPermissionResponse.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="revoketradingpermissions"></a>
+# **RevokeTradingPermissions**
+> SimpleResponse RevokeTradingPermissions (RevokeTradingPermissions body)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class RevokeTradingPermissionsExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new UsersApi();
+            var body = new RevokeTradingPermissions(); // RevokeTradingPermissions | 
+
+            try
+            {
+                SimpleResponse result = apiInstance.RevokeTradingPermissions(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.RevokeTradingPermissions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RevokeTradingPermissions**](RevokeTradingPermissions.md)|  | 
+
+### Return type
+
+[**SimpleResponse**](SimpleResponse.md)
 
 ### Authorization
 
@@ -2376,6 +2591,8 @@ This endpoint does not need any parameter.
 
 
 
+### Used by B2B partners to create users for their own organizations.
+
 ### Example
 ```csharp
 using System;
@@ -2433,6 +2650,8 @@ Name | Type | Description  | Notes
 > SyncMessage SyncRequest (SyncRequest body)
 
 
+
+### Used with WebSocket protocol. Returns all data associated with the user.  This endpoint is essential for efficient use of the WebSocket API. See [WebSockets](/#tag/WebSockets) for more details, or view our WebSockets [JavaScript](https://github.com/tradovate/example-api-js) or [C#](https://github.com/tradovate/example-api-csharp-trading) tutorials.  ```js const URL = 'wss://live.tradovateapi.com/v1/websocket'  const myWebSocket = new WebSocket(URL)  //authorize websocket with your access token myWebSocket.onopen = function() {     myWebSocket.send(`authorize\\n0\\n\\n${accessToken}`) }  const requestBody = {     users: [12345] }  myWebSocket.send(`user/syncrequest\\n1\\n\\n${JSON.stringify(requestBody)}`)   //starts a subscription to real-time user data. ```
 
 ### Example
 ```csharp

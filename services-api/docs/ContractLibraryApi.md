@@ -47,6 +47,7 @@ Method | HTTP request | Description
 [**ProductSessionLDependents**](ContractLibraryApi.md#productsessionldependents) | **GET** /productSession/ldeps | 
 [**ProductSuggest**](ContractLibraryApi.md#productsuggest) | **GET** /product/suggest | 
 [**RollContract**](ContractLibraryApi.md#rollcontract) | **POST** /contract/rollcontract | 
+[**RollContracts**](ContractLibraryApi.md#rollcontracts) | **POST** /contract/rollcontracts | 
 [**SpreadDefinitionItem**](ContractLibraryApi.md#spreaddefinitionitem) | **GET** /spreadDefinition/item | 
 [**SpreadDefinitionItems**](ContractLibraryApi.md#spreaddefinitionitems) | **GET** /spreadDefinition/items | 
 
@@ -1848,6 +1849,8 @@ Name | Type | Description  | Notes
 
 
 
+### Query the a product's fee parameters.
+
 ### Example
 ```csharp
 using System;
@@ -2564,6 +2567,8 @@ Name | Type | Description  | Notes
 
 
 
+### Request the best upcoming maturity date for a given contract.
+
 ### Example
 ```csharp
 using System;
@@ -2605,6 +2610,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RollContractResponse**](RollContractResponse.md)
+
+### Authorization
+
+[bearer_access_token](../README.md#bearer_access_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="rollcontracts"></a>
+# **RollContracts**
+> RollContractsResponse RollContracts (RollContracts body)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Tradovate.Services.Api;
+using Tradovate.Services.Client;
+using Tradovate.Services.Model;
+
+namespace Example
+{
+    public class RollContractsExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new ContractLibraryApi();
+            var body = new RollContracts(); // RollContracts | 
+
+            try
+            {
+                RollContractsResponse result = apiInstance.RollContracts(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ContractLibraryApi.RollContracts: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RollContracts**](RollContracts.md)|  | 
+
+### Return type
+
+[**RollContractsResponse**](RollContractsResponse.md)
 
 ### Authorization
 

@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -27,7 +27,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to cancel an order.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -38,7 +38,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to cancel an order.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -607,7 +607,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Stop a running multi-bracket strategy.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -618,7 +618,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Stop a running multi-bracket strategy.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -628,7 +628,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -639,7 +639,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -649,7 +649,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -660,7 +660,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -670,7 +670,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Modify an existing Order Strategy
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -681,7 +681,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Modify an existing Order Strategy
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1103,7 +1103,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1114,7 +1114,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1124,7 +1124,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1135,7 +1135,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1145,7 +1145,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1156,7 +1156,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1166,7 +1166,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1177,7 +1177,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1189,7 +1189,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to cancel an order.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1200,7 +1200,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to cancel an order.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1769,7 +1769,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Stop a running multi-bracket strategy.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1780,7 +1780,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Stop a running multi-bracket strategy.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1790,7 +1790,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1801,7 +1801,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1811,7 +1811,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1822,7 +1822,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1832,7 +1832,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Modify an existing Order Strategy
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -1843,7 +1843,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Modify an existing Order Strategy
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2265,7 +2265,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2276,7 +2276,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2286,7 +2286,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2297,7 +2297,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2307,7 +2307,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2318,7 +2318,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2328,7 +2328,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2339,7 +2339,7 @@ namespace Tradovate.Services.Api
         /// 
         /// </summary>
         /// <remarks>
-        /// 
+        /// ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </remarks>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2457,7 +2457,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to cancel an order.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2469,7 +2469,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to cancel an order.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2536,7 +2536,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to cancel an order.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -2549,7 +2549,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to cancel an order.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6429,7 +6429,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Stop a running multi-bracket strategy.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6441,7 +6441,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Stop a running multi-bracket strategy.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6508,7 +6508,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Stop a running multi-bracket strategy.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6521,7 +6521,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Stop a running multi-bracket strategy.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6588,7 +6588,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6600,7 +6600,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6667,7 +6667,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6680,7 +6680,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Send a request to cancel orders for a specific contract and close that position for the given account. This request initiates the cancellation process of open orders for an existing position held by this account. &gt; Note: This is a request to cancel orders and close a position, not a guarantee. Any operation could fail for a number of reasons, ranging from Exchange rejection to incorrect parameterization. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6747,7 +6747,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6759,7 +6759,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6826,7 +6826,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6839,7 +6839,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to modify the parameters of an order. You can request changes to an order, such as the trigger price for a Stop or Limit order. &gt; *Note*: This is no guarantee that the order can be modified in the way requests. Market, exchange and logical rules apply. 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6906,7 +6906,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Modify an existing Order Strategy
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6918,7 +6918,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Modify an existing Order Strategy
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6985,7 +6985,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Modify an existing Order Strategy
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -6998,7 +6998,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Modify an existing Order Strategy
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9877,7 +9877,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9889,7 +9889,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9956,7 +9956,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -9969,7 +9969,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place a Order Cancels Order order strategy. OCO order strategies link 2 orders together such that if one order is filled, the other order is cancelled. You must provide an &#x60;other&#x60; parameter pertaining to the order linked to this one. The &#x60;other&#x60; must specify an &#x60;action&#x60; and an &#x60;orderType&#x60; which determines the other parameters that must be set. For example a Limit or Stop order must use the &#x60;price&#x60; parameter, but a Stop-Limit will require a &#x60;price&#x60; and a &#x60;stopPrice&#x60;. Below is an example of an OCO that either sells to take profit at 4200 points, or sells to stop loss at 4100 points.  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const limit &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00 } const oco &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Stop\&quot;,     price: 4100.00     isAutomated: true, //must be true if this isn&#x27;t an order made directly by a human     other: limit }  const response &#x3D; await fetch(URL + &#x27;/order/placeoco&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(oco) })  const json &#x3D; await response.json() // { orderId: 0000000, ocoId: 0000000 } &#x60;&#x60;&#x60;
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10036,7 +10036,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10048,7 +10048,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10115,7 +10115,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10128,7 +10128,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Place an Order Sends Order order strategy. In the Trader application, the details of OSO orders can be viewed by adding the Order Ticket module to your workspace and selecting the Advanced workspace options with Brackets enabled. OSO orders allow for the most complex multi-bracket trading strategies. As an example, imagine MESM1 is trading around 4175.00 points. You want to place a Buy order for 4150.00 points, buying below market. We place an OSO to take profits at 4200.00 points. If the initial order is filled, the &#x60;bracket1&#x60; order will be sent. Below is an example in JavaScript:  &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27;  const oso &#x3D; {     action: &#x27;Sell&#x27;,     orderType: &#x27;Limit&#x27;,     price: 4200.00, }  const initial &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MESM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 4150.00,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human     bracket1: oso }  const response &#x3D; await fetch(URL + &#x27;/order/placeOSO&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(initial) })  const json &#x3D; await response.json() // { orderId: 0000000 } &#x60;&#x60;&#x60;  &gt;*Note:* If you specify both &#x60;bracket1&#x60; and &#x60;bracket2&#x60; the two orders will be linked as an OCO, where filling one will cancel the other.
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10195,7 +10195,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10207,7 +10207,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10274,7 +10274,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10287,7 +10287,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Make a request to place an order.  Depending on the order type, the parameters vary. In the Trader application, you can see the details of placing a standard order ticket by adding the Order Ticket module to your workspace.  #### *Market Order* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Buy\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Market\&quot;,     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60;  #### *Sell Limit* &#x60;&#x60;&#x60;js const URL &#x3D; &#x27;demo.tradovateapi.com/v1&#x27; const body &#x3D; {     accountSpec: yourUserName,     accountId: yourAcctId,     action: \&quot;Sell\&quot;,     symbol: \&quot;MYMM1\&quot;,     orderQty: 1,     orderType: \&quot;Limit\&quot;,     price: 35000, //use for single value like limit or stop     isAutomated: true //must be true if this isn&#x27;t an order made directly by a human }  const response &#x3D; await fetch(URL + &#x27;/order/placeorder&#x27;, {     method: &#x27;POST&#x27;,     headers: {         &#x27;Accept&#x27;: &#x27;application/json&#x27;,         &#x27;Authorization&#x27;: &#x60;Bearer ${myAccessToken}&#x60;,     },     body: JSON.stringify(body) })  const json &#x3D; await response.json() // { orderId: 0000000 }  &#x60;&#x60;&#x60; 
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10354,7 +10354,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10366,7 +10366,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10433,7 +10433,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
@@ -10446,7 +10446,7 @@ namespace Tradovate.Services.Api
         }
 
         /// <summary>
-        ///  
+        ///  ### Start a multi-bracket trading strategy. This endpoint is used with a WebSocket. You can create any number of brackets and add them to &#x60;brackets&#x60; field on the &#x60;params&#x60; object as a JSON string.  &#x60;&#x60;&#x60;js  const URL &#x3D; &#x27;wss://demo.tradovateapi.com/v1/websocket&#x27;  const params &#x3D; {     entryVersion: {         orderQty: 1,         orderType: \&quot;Market\&quot;     },     brackets: [{         qty: 1,         profitTarget: -30,         stopLoss: 15,         trailingStop: false     }] }  const body &#x3D; {     accountId: myAcctId,     accountSpec: name,     symbol: &#x27;MESM1&#x27;,     action: &#x27;Sell&#x27;,     orderStrategyTypeId: 2, //2 is &#x27;multibracket&#x27;, we currently only offer this strategy but more may exist in the future.     params: JSON.stringify(params) }  const mySocket &#x3D; new WebSocket(URL)  //authorize socket using your access token mySocket.onopen &#x3D; function() {     mySocket.send(&#x60;authorize\\n0\\n\\n${accessToken}&#x60;) }  mySocket.send(&#x60;orderstrategy/startorderstrategy\\n4\\n\\n${JSON.stringify(body)}&#x60;)  &#x60;&#x60;&#x60;  For more details about working with advanced order types, see [placeOrder](/#operation/placeOrder), [placeOCO](/#operation/placeOCO), and [placeOSO](/#operation/placeOSO).  
         /// </summary>
         /// <exception cref="Tradovate.Services.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>

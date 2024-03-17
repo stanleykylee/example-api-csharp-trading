@@ -15,6 +15,8 @@ Method | HTTP request | Description
 
 
 
+#### Request an access token using your user credentials and API Key.   See the [Access](/#tag/Access) section for more details. For a comprehensive guide on how to acquire and use an access token in the JavaScript language, see out [JavaScript tutorial](https://github.com/tradovate/example-api-js) repository. For usage examples using the C# language, see the [C# example](https://github.com/tradovate/example-api-csharp-trading) repository.  ### Acquiring an Access Token  ```js const URL = 'https://live.tradovateapi.com/v1'  const credentials = {     name:       \"Your credentials here\",     password:   \"Your credentials here\",     appId:      \"Sample App\",     appVersion: \"1.0\",     cid:        0,     sec:        \"Your API secret here\" }  async function getAccessToken() {     let response = await fetch(URL + '/auth/accessTokenRequest', {         method: 'POST',         headers: {             'Content-Type': 'application/json'         }     })     let result = await response.json()     return result // { accessToken, mdAccessToken, userId, ... } }  //...  async function main() {     const { accessToken, mdAccessToken, userId } = await getAccessToken()      //use access token } ```  ### Using an Access Token  ```js //use the Authorization: Bearer schema in API POST and GET requests  //simple /account/list endpoint requires no body or query async function getAccounts() {     let response = await fetch(URL + '/account/list', {         method: 'GET',         headers: {             'Content-Type': 'application/json',             Authorization: `Bearer ${accessToken}` //Access Token use in HTTP requests         }     })     let result = await response.json()     return result }  ```
+
 ### Example
 ```csharp
 using System;
@@ -72,6 +74,8 @@ No authorization required
 
 
 
+### Shows Basic user data for the calling user.
+
 ### Example
 ```csharp
 using System;
@@ -125,6 +129,8 @@ This endpoint does not need any parameter.
 > OAuthTokenResponse OAuthToken (OAuthToken body)
 
 
+
+### Used to exchange your OAuth code for an access token. Using the OAuth authorization delegation flow, we can send a request to verify that our users are who they say they are. For more information on using OAuth with the Tradovate API see our [OAuth JavaScript tutorial](https://github.com/tradovate/example-api-oauth).
 
 ### Example
 ```csharp
@@ -182,6 +188,8 @@ No authorization required
 > AccessTokenResponse RenewAccessToken ()
 
 
+
+### Request a renewal for an existing access token.
 
 ### Example
 ```csharp

@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -116,7 +115,8 @@ namespace Tradovate.Services.Model
         /// <param name="failureMessage">failureMessage.</param>
         /// <param name="senderId">senderId.</param>
         /// <param name="customTag50">customTag50.</param>
-        public OrderStrategy(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), long? contractId = default(long?), long? orderStrategyTypeId = default(long?), long? initiatorId = default(long?), ActionEnum action = default(ActionEnum), string @params = default(string), string uuid = default(string), StatusEnum status = default(StatusEnum), string failureMessage = default(string), long? senderId = default(long?), string customTag50 = default(string))
+        /// <param name="userSessionId">userSessionId.</param>
+        public OrderStrategy(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), long? contractId = default(long?), long? orderStrategyTypeId = default(long?), long? initiatorId = default(long?), ActionEnum action = default(ActionEnum), string @params = default(string), string uuid = default(string), StatusEnum status = default(StatusEnum), string failureMessage = default(string), long? senderId = default(long?), string customTag50 = default(string), long? userSessionId = default(long?))
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -174,11 +174,12 @@ namespace Tradovate.Services.Model
             }
             this.Id = id;
             this.InitiatorId = initiatorId;
-            this.Params = @params;
+            this._Params = @params;
             this.Uuid = uuid;
             this.FailureMessage = failureMessage;
             this.SenderId = senderId;
             this.CustomTag50 = customTag50;
+            this.UserSessionId = userSessionId;
         }
         
         /// <summary>
@@ -219,10 +220,10 @@ namespace Tradovate.Services.Model
 
 
         /// <summary>
-        /// Gets or Sets Params
+        /// Gets or Sets _Params
         /// </summary>
         [DataMember(Name="params", EmitDefaultValue=false)]
-        public string Params { get; set; }
+        public string _Params { get; set; }
 
         /// <summary>
         /// Gets or Sets Uuid
@@ -250,6 +251,12 @@ namespace Tradovate.Services.Model
         public string CustomTag50 { get; set; }
 
         /// <summary>
+        /// Gets or Sets UserSessionId
+        /// </summary>
+        [DataMember(Name="userSessionId", EmitDefaultValue=false)]
+        public long? UserSessionId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -264,12 +271,13 @@ namespace Tradovate.Services.Model
             sb.Append("  OrderStrategyTypeId: ").Append(OrderStrategyTypeId).Append("\n");
             sb.Append("  InitiatorId: ").Append(InitiatorId).Append("\n");
             sb.Append("  Action: ").Append(Action).Append("\n");
-            sb.Append("  Params: ").Append(Params).Append("\n");
+            sb.Append("  _Params: ").Append(_Params).Append("\n");
             sb.Append("  Uuid: ").Append(Uuid).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  FailureMessage: ").Append(FailureMessage).Append("\n");
             sb.Append("  SenderId: ").Append(SenderId).Append("\n");
             sb.Append("  CustomTag50: ").Append(CustomTag50).Append("\n");
+            sb.Append("  UserSessionId: ").Append(UserSessionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -340,9 +348,9 @@ namespace Tradovate.Services.Model
                     this.Action.Equals(input.Action))
                 ) && 
                 (
-                    this.Params == input.Params ||
-                    (this.Params != null &&
-                    this.Params.Equals(input.Params))
+                    this._Params == input._Params ||
+                    (this._Params != null &&
+                    this._Params.Equals(input._Params))
                 ) && 
                 (
                     this.Uuid == input.Uuid ||
@@ -368,6 +376,11 @@ namespace Tradovate.Services.Model
                     this.CustomTag50 == input.CustomTag50 ||
                     (this.CustomTag50 != null &&
                     this.CustomTag50.Equals(input.CustomTag50))
+                ) && 
+                (
+                    this.UserSessionId == input.UserSessionId ||
+                    (this.UserSessionId != null &&
+                    this.UserSessionId.Equals(input.UserSessionId))
                 );
         }
 
@@ -394,8 +407,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.InitiatorId.GetHashCode();
                 if (this.Action != null)
                     hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Params != null)
-                    hashCode = hashCode * 59 + this.Params.GetHashCode();
+                if (this._Params != null)
+                    hashCode = hashCode * 59 + this._Params.GetHashCode();
                 if (this.Uuid != null)
                     hashCode = hashCode * 59 + this.Uuid.GetHashCode();
                 if (this.Status != null)
@@ -406,6 +419,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.SenderId.GetHashCode();
                 if (this.CustomTag50 != null)
                     hashCode = hashCode * 59 + this.CustomTag50.GetHashCode();
+                if (this.UserSessionId != null)
+                    hashCode = hashCode * 59 + this.UserSessionId.GetHashCode();
                 return hashCode;
             }
         }

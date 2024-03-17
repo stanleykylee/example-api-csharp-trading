@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -30,116 +29,201 @@ namespace Tradovate.Services.Model
         public partial class CashBalanceLog :  IEquatable<CashBalanceLog>, IValidatableObject
     {
         /// <summary>
-        /// AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, ClearingFee, Commission, DeskFee, EntitlementSubscription, ExchangeFee, FundTransaction, FundTransactionFee, IPFee, LiquidationFee, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, OptionsTrade, OrderRoutingFee, TradePaired, TradovateSubscription
+        /// AccountClosureFee, AddUserFee, AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, CashSettlement, ClearingFee, Commission, Courtesy, Debit, DepositFee, DeskFee, DormantFee, EntitlementSubscription, Escheatment, ExchangeFee, FundTransaction, FundTransactionFee, GoodwillCredit, IPFee, InactivityFee, LiquidationFee, LiquidationFee2, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, NsfCheckFee, OptionsTrade, OrderRoutingFee, PROMO, RithmicFee, SeatLeasePayment, StopPaymentFee, ThirdPartyFee, TradePaired, TradovateSubscription
         /// </summary>
-        /// <value>AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, ClearingFee, Commission, DeskFee, EntitlementSubscription, ExchangeFee, FundTransaction, FundTransactionFee, IPFee, LiquidationFee, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, OptionsTrade, OrderRoutingFee, TradePaired, TradovateSubscription</value>
+        /// <value>AccountClosureFee, AddUserFee, AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, CashSettlement, ClearingFee, Commission, Courtesy, Debit, DepositFee, DeskFee, DormantFee, EntitlementSubscription, Escheatment, ExchangeFee, FundTransaction, FundTransactionFee, GoodwillCredit, IPFee, InactivityFee, LiquidationFee, LiquidationFee2, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, NsfCheckFee, OptionsTrade, OrderRoutingFee, PROMO, RithmicFee, SeatLeasePayment, StopPaymentFee, ThirdPartyFee, TradePaired, TradovateSubscription</value>
         [JsonConverter(typeof(StringEnumConverter))]
                 public enum CashChangeTypeEnum
         {
             /// <summary>
+            /// Enum AccountClosureFee for value: AccountClosureFee
+            /// </summary>
+            [EnumMember(Value = "AccountClosureFee")]
+            AccountClosureFee = 1,
+            /// <summary>
+            /// Enum AddUserFee for value: AddUserFee
+            /// </summary>
+            [EnumMember(Value = "AddUserFee")]
+            AddUserFee = 2,
+            /// <summary>
             /// Enum AutomaticReconciliation for value: AutomaticReconciliation
             /// </summary>
             [EnumMember(Value = "AutomaticReconciliation")]
-            AutomaticReconciliation = 1,
+            AutomaticReconciliation = 3,
             /// <summary>
             /// Enum BrokerageFee for value: BrokerageFee
             /// </summary>
             [EnumMember(Value = "BrokerageFee")]
-            BrokerageFee = 2,
+            BrokerageFee = 4,
             /// <summary>
             /// Enum CancelledPairedTrade for value: CancelledPairedTrade
             /// </summary>
             [EnumMember(Value = "CancelledPairedTrade")]
-            CancelledPairedTrade = 3,
+            CancelledPairedTrade = 5,
+            /// <summary>
+            /// Enum CashSettlement for value: CashSettlement
+            /// </summary>
+            [EnumMember(Value = "CashSettlement")]
+            CashSettlement = 6,
             /// <summary>
             /// Enum ClearingFee for value: ClearingFee
             /// </summary>
             [EnumMember(Value = "ClearingFee")]
-            ClearingFee = 4,
+            ClearingFee = 7,
             /// <summary>
             /// Enum Commission for value: Commission
             /// </summary>
             [EnumMember(Value = "Commission")]
-            Commission = 5,
+            Commission = 8,
+            /// <summary>
+            /// Enum Courtesy for value: Courtesy
+            /// </summary>
+            [EnumMember(Value = "Courtesy")]
+            Courtesy = 9,
+            /// <summary>
+            /// Enum Debit for value: Debit
+            /// </summary>
+            [EnumMember(Value = "Debit")]
+            Debit = 10,
+            /// <summary>
+            /// Enum DepositFee for value: DepositFee
+            /// </summary>
+            [EnumMember(Value = "DepositFee")]
+            DepositFee = 11,
             /// <summary>
             /// Enum DeskFee for value: DeskFee
             /// </summary>
             [EnumMember(Value = "DeskFee")]
-            DeskFee = 6,
+            DeskFee = 12,
+            /// <summary>
+            /// Enum DormantFee for value: DormantFee
+            /// </summary>
+            [EnumMember(Value = "DormantFee")]
+            DormantFee = 13,
             /// <summary>
             /// Enum EntitlementSubscription for value: EntitlementSubscription
             /// </summary>
             [EnumMember(Value = "EntitlementSubscription")]
-            EntitlementSubscription = 7,
+            EntitlementSubscription = 14,
+            /// <summary>
+            /// Enum Escheatment for value: Escheatment
+            /// </summary>
+            [EnumMember(Value = "Escheatment")]
+            Escheatment = 15,
             /// <summary>
             /// Enum ExchangeFee for value: ExchangeFee
             /// </summary>
             [EnumMember(Value = "ExchangeFee")]
-            ExchangeFee = 8,
+            ExchangeFee = 16,
             /// <summary>
             /// Enum FundTransaction for value: FundTransaction
             /// </summary>
             [EnumMember(Value = "FundTransaction")]
-            FundTransaction = 9,
+            FundTransaction = 17,
             /// <summary>
             /// Enum FundTransactionFee for value: FundTransactionFee
             /// </summary>
             [EnumMember(Value = "FundTransactionFee")]
-            FundTransactionFee = 10,
+            FundTransactionFee = 18,
+            /// <summary>
+            /// Enum GoodwillCredit for value: GoodwillCredit
+            /// </summary>
+            [EnumMember(Value = "GoodwillCredit")]
+            GoodwillCredit = 19,
             /// <summary>
             /// Enum IPFee for value: IPFee
             /// </summary>
             [EnumMember(Value = "IPFee")]
-            IPFee = 11,
+            IPFee = 20,
+            /// <summary>
+            /// Enum InactivityFee for value: InactivityFee
+            /// </summary>
+            [EnumMember(Value = "InactivityFee")]
+            InactivityFee = 21,
             /// <summary>
             /// Enum LiquidationFee for value: LiquidationFee
             /// </summary>
             [EnumMember(Value = "LiquidationFee")]
-            LiquidationFee = 12,
+            LiquidationFee = 22,
+            /// <summary>
+            /// Enum LiquidationFee2 for value: LiquidationFee2
+            /// </summary>
+            [EnumMember(Value = "LiquidationFee2")]
+            LiquidationFee2 = 23,
             /// <summary>
             /// Enum ManualAdjustment for value: ManualAdjustment
             /// </summary>
             [EnumMember(Value = "ManualAdjustment")]
-            ManualAdjustment = 13,
+            ManualAdjustment = 24,
             /// <summary>
             /// Enum MarketDataSubscription for value: MarketDataSubscription
             /// </summary>
             [EnumMember(Value = "MarketDataSubscription")]
-            MarketDataSubscription = 14,
+            MarketDataSubscription = 25,
             /// <summary>
             /// Enum NewSession for value: NewSession
             /// </summary>
             [EnumMember(Value = "NewSession")]
-            NewSession = 15,
+            NewSession = 26,
             /// <summary>
             /// Enum NfaFee for value: NfaFee
             /// </summary>
             [EnumMember(Value = "NfaFee")]
-            NfaFee = 16,
+            NfaFee = 27,
+            /// <summary>
+            /// Enum NsfCheckFee for value: NsfCheckFee
+            /// </summary>
+            [EnumMember(Value = "NsfCheckFee")]
+            NsfCheckFee = 28,
             /// <summary>
             /// Enum OptionsTrade for value: OptionsTrade
             /// </summary>
             [EnumMember(Value = "OptionsTrade")]
-            OptionsTrade = 17,
+            OptionsTrade = 29,
             /// <summary>
             /// Enum OrderRoutingFee for value: OrderRoutingFee
             /// </summary>
             [EnumMember(Value = "OrderRoutingFee")]
-            OrderRoutingFee = 18,
+            OrderRoutingFee = 30,
+            /// <summary>
+            /// Enum PROMO for value: PROMO
+            /// </summary>
+            [EnumMember(Value = "PROMO")]
+            PROMO = 31,
+            /// <summary>
+            /// Enum RithmicFee for value: RithmicFee
+            /// </summary>
+            [EnumMember(Value = "RithmicFee")]
+            RithmicFee = 32,
+            /// <summary>
+            /// Enum SeatLeasePayment for value: SeatLeasePayment
+            /// </summary>
+            [EnumMember(Value = "SeatLeasePayment")]
+            SeatLeasePayment = 33,
+            /// <summary>
+            /// Enum StopPaymentFee for value: StopPaymentFee
+            /// </summary>
+            [EnumMember(Value = "StopPaymentFee")]
+            StopPaymentFee = 34,
+            /// <summary>
+            /// Enum ThirdPartyFee for value: ThirdPartyFee
+            /// </summary>
+            [EnumMember(Value = "ThirdPartyFee")]
+            ThirdPartyFee = 35,
             /// <summary>
             /// Enum TradePaired for value: TradePaired
             /// </summary>
             [EnumMember(Value = "TradePaired")]
-            TradePaired = 19,
+            TradePaired = 36,
             /// <summary>
             /// Enum TradovateSubscription for value: TradovateSubscription
             /// </summary>
             [EnumMember(Value = "TradovateSubscription")]
-            TradovateSubscription = 20        }
+            TradovateSubscription = 37        }
         /// <summary>
-        /// AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, ClearingFee, Commission, DeskFee, EntitlementSubscription, ExchangeFee, FundTransaction, FundTransactionFee, IPFee, LiquidationFee, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, OptionsTrade, OrderRoutingFee, TradePaired, TradovateSubscription
+        /// AccountClosureFee, AddUserFee, AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, CashSettlement, ClearingFee, Commission, Courtesy, Debit, DepositFee, DeskFee, DormantFee, EntitlementSubscription, Escheatment, ExchangeFee, FundTransaction, FundTransactionFee, GoodwillCredit, IPFee, InactivityFee, LiquidationFee, LiquidationFee2, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, NsfCheckFee, OptionsTrade, OrderRoutingFee, PROMO, RithmicFee, SeatLeasePayment, StopPaymentFee, ThirdPartyFee, TradePaired, TradovateSubscription
         /// </summary>
-        /// <value>AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, ClearingFee, Commission, DeskFee, EntitlementSubscription, ExchangeFee, FundTransaction, FundTransactionFee, IPFee, LiquidationFee, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, OptionsTrade, OrderRoutingFee, TradePaired, TradovateSubscription</value>
+        /// <value>AccountClosureFee, AddUserFee, AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, CashSettlement, ClearingFee, Commission, Courtesy, Debit, DepositFee, DeskFee, DormantFee, EntitlementSubscription, Escheatment, ExchangeFee, FundTransaction, FundTransactionFee, GoodwillCredit, IPFee, InactivityFee, LiquidationFee, LiquidationFee2, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, NsfCheckFee, OptionsTrade, OrderRoutingFee, PROMO, RithmicFee, SeatLeasePayment, StopPaymentFee, ThirdPartyFee, TradePaired, TradovateSubscription</value>
         [DataMember(Name="cashChangeType", EmitDefaultValue=false)]
         public CashChangeTypeEnum CashChangeType { get; set; }
         /// <summary>
@@ -153,13 +237,14 @@ namespace Tradovate.Services.Model
         /// <param name="amount">amount (required).</param>
         /// <param name="realizedPnL">realizedPnL.</param>
         /// <param name="weekRealizedPnL">weekRealizedPnL.</param>
-        /// <param name="cashChangeType">AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, ClearingFee, Commission, DeskFee, EntitlementSubscription, ExchangeFee, FundTransaction, FundTransactionFee, IPFee, LiquidationFee, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, OptionsTrade, OrderRoutingFee, TradePaired, TradovateSubscription (required).</param>
+        /// <param name="cashChangeType">AccountClosureFee, AddUserFee, AutomaticReconciliation, BrokerageFee, CancelledPairedTrade, CashSettlement, ClearingFee, Commission, Courtesy, Debit, DepositFee, DeskFee, DormantFee, EntitlementSubscription, Escheatment, ExchangeFee, FundTransaction, FundTransactionFee, GoodwillCredit, IPFee, InactivityFee, LiquidationFee, LiquidationFee2, ManualAdjustment, MarketDataSubscription, NewSession, NfaFee, NsfCheckFee, OptionsTrade, OrderRoutingFee, PROMO, RithmicFee, SeatLeasePayment, StopPaymentFee, ThirdPartyFee, TradePaired, TradovateSubscription (required).</param>
         /// <param name="fillPairId">fillPairId.</param>
         /// <param name="fillId">fillId.</param>
         /// <param name="fundTransactionId">fundTransactionId.</param>
         /// <param name="comment">comment.</param>
         /// <param name="delta">delta (required).</param>
-        public CashBalanceLog(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), TradeDate tradeDate = default(TradeDate), long? currencyId = default(long?), double? amount = default(double?), double? realizedPnL = default(double?), double? weekRealizedPnL = default(double?), CashChangeTypeEnum cashChangeType = default(CashChangeTypeEnum), long? fillPairId = default(long?), long? fillId = default(long?), long? fundTransactionId = default(long?), string comment = default(string), double? delta = default(double?))
+        /// <param name="senderId">senderId.</param>
+        public CashBalanceLog(long? id = default(long?), long? accountId = default(long?), DateTime? timestamp = default(DateTime?), TradeDate tradeDate = default(TradeDate), long? currencyId = default(long?), double? amount = default(double?), double? realizedPnL = default(double?), double? weekRealizedPnL = default(double?), CashChangeTypeEnum cashChangeType = default(CashChangeTypeEnum), long? fillPairId = default(long?), long? fillId = default(long?), long? fundTransactionId = default(long?), string comment = default(string), double? delta = default(double?), long? senderId = default(long?))
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -231,6 +316,7 @@ namespace Tradovate.Services.Model
             this.FillId = fillId;
             this.FundTransactionId = fundTransactionId;
             this.Comment = comment;
+            this.SenderId = senderId;
         }
         
         /// <summary>
@@ -313,6 +399,12 @@ namespace Tradovate.Services.Model
         public double? Delta { get; set; }
 
         /// <summary>
+        /// Gets or Sets SenderId
+        /// </summary>
+        [DataMember(Name="senderId", EmitDefaultValue=false)]
+        public long? SenderId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -334,6 +426,7 @@ namespace Tradovate.Services.Model
             sb.Append("  FundTransactionId: ").Append(FundTransactionId).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Delta: ").Append(Delta).Append("\n");
+            sb.Append("  SenderId: ").Append(SenderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -437,6 +530,11 @@ namespace Tradovate.Services.Model
                     this.Delta == input.Delta ||
                     (this.Delta != null &&
                     this.Delta.Equals(input.Delta))
+                ) && 
+                (
+                    this.SenderId == input.SenderId ||
+                    (this.SenderId != null &&
+                    this.SenderId.Equals(input.SenderId))
                 );
         }
 
@@ -477,6 +575,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.Comment.GetHashCode();
                 if (this.Delta != null)
                     hashCode = hashCode * 59 + this.Delta.GetHashCode();
+                if (this.SenderId != null)
+                    hashCode = hashCode * 59 + this.SenderId.GetHashCode();
                 return hashCode;
             }
         }

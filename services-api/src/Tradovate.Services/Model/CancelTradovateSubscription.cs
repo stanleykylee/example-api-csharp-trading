@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -34,7 +33,8 @@ namespace Tradovate.Services.Model
         /// </summary>
         /// <param name="tradovateSubscriptionId">tradovateSubscriptionId (required).</param>
         /// <param name="cancelReason">cancelReason.</param>
-        public CancelTradovateSubscription(long? tradovateSubscriptionId = default(long?), string cancelReason = default(string))
+        /// <param name="expire">expire.</param>
+        public CancelTradovateSubscription(long? tradovateSubscriptionId = default(long?), string cancelReason = default(string), bool? expire = default(bool?))
         {
             // to ensure "tradovateSubscriptionId" is required (not null)
             if (tradovateSubscriptionId == null)
@@ -46,6 +46,7 @@ namespace Tradovate.Services.Model
                 this.TradovateSubscriptionId = tradovateSubscriptionId;
             }
             this.CancelReason = cancelReason;
+            this.Expire = expire;
         }
         
         /// <summary>
@@ -61,6 +62,12 @@ namespace Tradovate.Services.Model
         public string CancelReason { get; set; }
 
         /// <summary>
+        /// Gets or Sets Expire
+        /// </summary>
+        [DataMember(Name="expire", EmitDefaultValue=false)]
+        public bool? Expire { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,6 +77,7 @@ namespace Tradovate.Services.Model
             sb.Append("class CancelTradovateSubscription {\n");
             sb.Append("  TradovateSubscriptionId: ").Append(TradovateSubscriptionId).Append("\n");
             sb.Append("  CancelReason: ").Append(CancelReason).Append("\n");
+            sb.Append("  Expire: ").Append(Expire).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,6 +121,11 @@ namespace Tradovate.Services.Model
                     this.CancelReason == input.CancelReason ||
                     (this.CancelReason != null &&
                     this.CancelReason.Equals(input.CancelReason))
+                ) && 
+                (
+                    this.Expire == input.Expire ||
+                    (this.Expire != null &&
+                    this.Expire.Equals(input.Expire))
                 );
         }
 
@@ -129,6 +142,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.TradovateSubscriptionId.GetHashCode();
                 if (this.CancelReason != null)
                     hashCode = hashCode * 59 + this.CancelReason.GetHashCode();
+                if (this.Expire != null)
+                    hashCode = hashCode * 59 + this.Expire.GetHashCode();
                 return hashCode;
             }
         }

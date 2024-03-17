@@ -559,6 +559,8 @@ Name | Type | Description  | Notes
 
 
 
+### Close the chat context.
+
 ### Example
 ```csharp
 using System;
@@ -617,6 +619,8 @@ Name | Type | Description  | Notes
 
 
 
+### Marks a chat message as read.
+
 ### Example
 ```csharp
 using System;
@@ -674,6 +678,8 @@ Name | Type | Description  | Notes
 > ChatMessageResponse PostChatMessage (PostChatMessage body)
 
 
+
+### Post a chat message to a given chat's history.
 
 ### Example
 ```csharp

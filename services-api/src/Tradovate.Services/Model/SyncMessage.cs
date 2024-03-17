@@ -1,7 +1,7 @@
 /* 
  * Tradovate API
  *
- * Tradovate API provides an access to the complete set of robust Tradovate functionality.
+ * # Getting Started With the Tradovate API The Tradovate API is a robust web interface that clients can utilize to bring our Trading services to their own applications and  extensions. There are a number of supported operations that a client can perform by accessing the REST API. Essentially any functionality that is available on the Tradovate Trader application is also exposed via the API. For the comprehensive JavaScript guide to using our API, please go [here](https://github.com/tradovate/example-api-js/).  ## Place and Modify Orders The Tradovate REST API makes it easy to place and modify orders from code. Any type of order supported by the Tradovate Trader application is also able to be placed via the REST API. For interactive examples see the [Orders](#tag/Orders) section.  ## Query Positions, Contracts, Maturities and More From the Tradovate REST API we can get data about positions, contracts, products, prices, currencies, maturities, and more. Any data that you could view by browsing Tradovate Trader is queryable from the API. For interactive examples see the [ContractLibrary](#tag/ContractLibrary) section.  ## Query Account Data Using our `/account/_*` operations allow you to do things like find an account by its ID, get a snapshot of an account's current cash balance, and access account trading permissions. For interactive examples see the [Accounting](#tag/Accounting) section.  ## Manage Risk We can use all of the risk management features available on Tradovate Trader from the API. This includes setting position limits and creating, deleting, and modifying risk-parameters. For live examples, see the [Risk](#tag/Risks) section.  ## Access Alert and Live Chat Functions You can use the REST API to generate alerts which can be seen from the Tradovate Trader application. You can use all of the Chat functionality from from  the REST API. This includes opening and closing the chat context, querying and posting chat message items, and even allowing us to mark a chat item as 'read'. For more examples see the [Alerts](#tag/Alerts) and [Chat](#tag/Chat) sections.  ## How Do I Use the Tradovate REST API? In order to access the features of the Tradovate REST API you'll need to sign up for a [Tradovate Trader](https://trader.tradovate.com/welcome) account. You must meet some other requirements as well: - You need a LIVE account with more than $1000 in equity. - You need a subscription to API Access. - You'll need to generate an API Key.  Then you simply need to acquire an access token using your API Key, as described in the [Access](#tag/Access) section. 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -20,7 +20,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Tradovate.Services.Client.SwaggerDateConverter;
-
 namespace Tradovate.Services.Model
 {
     /// <summary>
@@ -34,6 +33,7 @@ namespace Tradovate.Services.Model
         /// </summary>
         /// <param name="users">users (required).</param>
         /// <param name="accounts">accounts.</param>
+        /// <param name="accountRiskStatuses">accountRiskStatuses.</param>
         /// <param name="marginSnapshots">marginSnapshots.</param>
         /// <param name="userAccountAutoLiqs">userAccountAutoLiqs.</param>
         /// <param name="cashBalances">cashBalances.</param>
@@ -58,7 +58,7 @@ namespace Tradovate.Services.Model
         /// <param name="userPlugins">userPlugins.</param>
         /// <param name="contractGroups">contractGroups (required).</param>
         /// <param name="orderStrategyTypes">orderStrategyTypes.</param>
-        public SyncMessage(List<User> users = default(List<User>), List<Account> accounts = default(List<Account>), List<MarginSnapshot> marginSnapshots = default(List<MarginSnapshot>), List<UserAccountAutoLiq> userAccountAutoLiqs = default(List<UserAccountAutoLiq>), List<CashBalance> cashBalances = default(List<CashBalance>), List<Currency> currencies = default(List<Currency>), List<Position> positions = default(List<Position>), List<FillPair> fillPairs = default(List<FillPair>), List<Order> orders = default(List<Order>), List<Contract> contracts = default(List<Contract>), List<ContractMaturity> contractMaturities = default(List<ContractMaturity>), List<Product> products = default(List<Product>), List<Exchange> exchanges = default(List<Exchange>), List<SpreadDefinition> spreadDefinitions = default(List<SpreadDefinition>), List<Command> commands = default(List<Command>), List<CommandReport> commandReports = default(List<CommandReport>), List<ExecutionReport> executionReports = default(List<ExecutionReport>), List<OrderVersion> orderVersions = default(List<OrderVersion>), List<Fill> fills = default(List<Fill>), List<OrderStrategy> orderStrategies = default(List<OrderStrategy>), List<OrderStrategyLink> orderStrategyLinks = default(List<OrderStrategyLink>), List<UserProperty> userProperties = default(List<UserProperty>), List<Property> properties = default(List<Property>), List<UserPlugin> userPlugins = default(List<UserPlugin>), List<ContractGroup> contractGroups = default(List<ContractGroup>), List<OrderStrategyType> orderStrategyTypes = default(List<OrderStrategyType>))
+        public SyncMessage(List<User> users = default(List<User>), List<Account> accounts = default(List<Account>), List<AccountRiskStatus> accountRiskStatuses = default(List<AccountRiskStatus>), List<MarginSnapshot> marginSnapshots = default(List<MarginSnapshot>), List<UserAccountAutoLiq> userAccountAutoLiqs = default(List<UserAccountAutoLiq>), List<CashBalance> cashBalances = default(List<CashBalance>), List<Currency> currencies = default(List<Currency>), List<Position> positions = default(List<Position>), List<FillPair> fillPairs = default(List<FillPair>), List<Order> orders = default(List<Order>), List<Contract> contracts = default(List<Contract>), List<ContractMaturity> contractMaturities = default(List<ContractMaturity>), List<Product> products = default(List<Product>), List<Exchange> exchanges = default(List<Exchange>), List<SpreadDefinition> spreadDefinitions = default(List<SpreadDefinition>), List<Command> commands = default(List<Command>), List<CommandReport> commandReports = default(List<CommandReport>), List<ExecutionReport> executionReports = default(List<ExecutionReport>), List<OrderVersion> orderVersions = default(List<OrderVersion>), List<Fill> fills = default(List<Fill>), List<OrderStrategy> orderStrategies = default(List<OrderStrategy>), List<OrderStrategyLink> orderStrategyLinks = default(List<OrderStrategyLink>), List<UserProperty> userProperties = default(List<UserProperty>), List<Property> properties = default(List<Property>), List<UserPlugin> userPlugins = default(List<UserPlugin>), List<ContractGroup> contractGroups = default(List<ContractGroup>), List<OrderStrategyType> orderStrategyTypes = default(List<OrderStrategyType>))
         {
             // to ensure "users" is required (not null)
             if (users == null)
@@ -79,6 +79,7 @@ namespace Tradovate.Services.Model
                 this.ContractGroups = contractGroups;
             }
             this.Accounts = accounts;
+            this.AccountRiskStatuses = accountRiskStatuses;
             this.MarginSnapshots = marginSnapshots;
             this.UserAccountAutoLiqs = userAccountAutoLiqs;
             this.CashBalances = cashBalances;
@@ -115,6 +116,12 @@ namespace Tradovate.Services.Model
         /// </summary>
         [DataMember(Name="accounts", EmitDefaultValue=false)]
         public List<Account> Accounts { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountRiskStatuses
+        /// </summary>
+        [DataMember(Name="accountRiskStatuses", EmitDefaultValue=false)]
+        public List<AccountRiskStatus> AccountRiskStatuses { get; set; }
 
         /// <summary>
         /// Gets or Sets MarginSnapshots
@@ -270,6 +277,7 @@ namespace Tradovate.Services.Model
             sb.Append("class SyncMessage {\n");
             sb.Append("  Users: ").Append(Users).Append("\n");
             sb.Append("  Accounts: ").Append(Accounts).Append("\n");
+            sb.Append("  AccountRiskStatuses: ").Append(AccountRiskStatuses).Append("\n");
             sb.Append("  MarginSnapshots: ").Append(MarginSnapshots).Append("\n");
             sb.Append("  UserAccountAutoLiqs: ").Append(UserAccountAutoLiqs).Append("\n");
             sb.Append("  CashBalances: ").Append(CashBalances).Append("\n");
@@ -339,6 +347,12 @@ namespace Tradovate.Services.Model
                     this.Accounts != null &&
                     input.Accounts != null &&
                     this.Accounts.SequenceEqual(input.Accounts)
+                ) && 
+                (
+                    this.AccountRiskStatuses == input.AccountRiskStatuses ||
+                    this.AccountRiskStatuses != null &&
+                    input.AccountRiskStatuses != null &&
+                    this.AccountRiskStatuses.SequenceEqual(input.AccountRiskStatuses)
                 ) && 
                 (
                     this.MarginSnapshots == input.MarginSnapshots ||
@@ -499,6 +513,8 @@ namespace Tradovate.Services.Model
                     hashCode = hashCode * 59 + this.Users.GetHashCode();
                 if (this.Accounts != null)
                     hashCode = hashCode * 59 + this.Accounts.GetHashCode();
+                if (this.AccountRiskStatuses != null)
+                    hashCode = hashCode * 59 + this.AccountRiskStatuses.GetHashCode();
                 if (this.MarginSnapshots != null)
                     hashCode = hashCode * 59 + this.MarginSnapshots.GetHashCode();
                 if (this.UserAccountAutoLiqs != null)

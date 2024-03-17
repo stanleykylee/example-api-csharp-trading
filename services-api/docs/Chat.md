@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **AssignedSupportId** | **long?** | Assigned To | [optional] 
 **ClosedById** | **long?** | Closed By | [optional] 
 **CloseTimestamp** | **DateTime?** |  | [optional] 
+**UpdatedTimestamp** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
